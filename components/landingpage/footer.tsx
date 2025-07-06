@@ -1,4 +1,3 @@
-import { Separator } from "../ui/separator"
 import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import Link from "next/link"
 import { Skills } from "./skills"
@@ -11,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Phoenix</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-              Full Stack Developer passionate about creating exceptional digital experiences. Let's collaborate and
+              Full Stack Developer passionate about creating exceptional digital experiences. Let&apos;s collaborate and
               bring your ideas to life.
             </p>
             <div className="flex space-x-4">
@@ -100,8 +99,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-
         <Skills />
       </div>
     </footer>

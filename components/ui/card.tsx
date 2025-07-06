@@ -5,7 +5,7 @@ import {
   IconBrandTailwind,
 } from "@tabler/icons-react";
 import { HoverEffect } from "../ui/card-hover-effect";
-import { TagItem } from "@/src/components/ui/tags";
+import { TagItem } from "@/components/ui/tags";
 
 export function CardHoverEffectDemo() {
   return (
