@@ -69,7 +69,7 @@ const HeroSection = () => {
       <Navbar />
       <div className="min-h-screen bg-white dark:bg-black" style={{ marginLeft: "350px", marginRight: "350px" }}>
         <motion.section
-          className="flex items-center justify-center text-black dark:text-white px-6 py-12"
+          className="flex items-center justify-center text-black dark:text-white px-6 py-6"
           initial="hidden"
           animate="visible"
           variants={containerVariants}

@@ -14,24 +14,14 @@ const menuItems = [
 
 const Navbar = () => {
   const [menuState, setMenuState] = React.useState(false)
-  // const [isScrolled, setIsScrolled] = React.useState(false)
-
-  // React.useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 50)
-  //   }
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => window.removeEventListener('scroll', handleScroll)
-  // }, [])
-
   return (
     <header>
       <nav
         data-state={menuState && 'active'}
         className="w-full px-2 group">
         <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12')}>
-          <div className="relative flex text-xl items-center justify-between w-full py-3 lg:py-4">
-            <div className='text-3xl p-2 font-bold'>
+          <div className="relative flex text-xl mr-24 items-center justify-between w-full py-3 lg:py-4">
+            <div className='text-6xl px-16 ml-16 font-bold'>
               <Themetoggle />
             </div>
             <div className="flex w-full lg:w-auto justify-end">
@@ -50,7 +40,7 @@ const Navbar = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-black text-xl hover:text-accent-foreground dark:text-white block duration-150">
+                      className="text-black text-xl  hover:text-accent-foreground dark:text-white block duration-150">
                       <span>{item.name}</span>
                     </Link>
                   </li>
