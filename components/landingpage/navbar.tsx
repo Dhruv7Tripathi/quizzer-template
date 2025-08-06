@@ -2,13 +2,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import { useSession } from 'next-auth/react';
 import { Menu, X } from 'lucide-react';
-// import UserAccountNav from '../auth/userAccountNav';
-// import SignInButton from '../auth/SignInButton';
 import { navItems } from '@/contants';
+import { Button } from '../ui/button';
 const Navbar = () => {
-  // const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -38,7 +35,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -48,13 +45,14 @@ const Navbar = () => {
                 <span className="group-hover:underline">{item.name}</span>
               </Link>
             ))}
-            <div className="flex items-center">
-              {/* {session?.user ? (
-                <UserAccountNav user={session.user} />
-              ) : (
-                <SignInButton text="Sign In" />
-              )} */}
-            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <button className="text-white font-semibold rounded-3xl">
+              Login
+            </button>
+            <button className="text-white font-semibold px-3 py-2 bg-green-500 hover:text-white transition-colors rounded-3xl">
+              Sign Up
+            </button>
           </div>
 
           <div className="md:hidden">

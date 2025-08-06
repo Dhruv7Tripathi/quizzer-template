@@ -129,7 +129,7 @@ export default function LandingPage() {
             <Accordion
               type="single"
               collapsible
-              className="max-w-3xl mx-auto divide-y dark:hover:bg-green-700 divide-gray-700"
+              className="max-w-3xl mx-auto divide-y dark:hover:text-neutral-400 divide-neutral-700"
             >
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
