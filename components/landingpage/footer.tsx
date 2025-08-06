@@ -1,108 +1,112 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import Link from "next/link"
-import { Skills } from "./skills"
-const Footer = () => {
+"use client";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 
+const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-black dark:text-white mb-4">Phoenix</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-              Full Stack Developer passionate about creating exceptional digital experiences. Let&apos;s collaborate and
-              bring your ideas to life.
+    <footer className="bg-black py-10 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+          {/* Logo + Info */}
+          <div>
+            <Link href="/" className="flex items-center space-x-2 mb-4">
+              <Image
+                src="/ww.png"
+                width={30}
+                height={30}
+                alt="Logo"
+                className="rounded-xl"
+                unoptimized
+              />
+              <span className="text-xl font-extrabold text-white">Quizzer</span>
+            </Link>
+            <p className="text-sm mt-2">
+              Building in public at
+              <a
+                className="text-green-400 pl-1 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/dhruv7tripathi"
+              >
+                @dhruv7tripathi
+              </a>
             </p>
-            <div className="flex space-x-4">
-              <Link
-                href="https://github.com"
-                className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              </Link>
-              <Link
-                href="https://linkedin.com"
-                className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              </Link>
-              <Link
-                href="https://twitter.com"
-                className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              </Link>
-              <Link
-                href="mailto:phoenix@example.com"
-                className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-              </Link>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="md:col-span-3 grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <div>
+              <h3 className="font-semibold text-base mb-3">Features</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/" className="text-gray-300 hover:text-green-500">Home</Link></li>
+                <li><Link href="/quizzes" className="text-gray-300 hover:text-green-500">Dashboard</Link></li>
+                <li><Link href="/createquiz" className="text-gray-300 hover:text-green-500">Create Quiz</Link></li>
+                <li><Link href="/profile" className="text-gray-300 hover:text-green-500">Profile</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-3">Social</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link
+                    href="https://www.linkedin.com/in/dhruv-tripathi"
+                    target="_blank"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.76..." />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://x.com/DhruvTripathi77"
+                    target="_blank"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 4.55..." />
+                    </svg>
+                    <span>Twitter</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://github.com/Dhruv7Tripathi"
+                    target="_blank"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.62..." />
+                    </svg>
+                    <span>GitHub</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-3">Others</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/about" className="text-gray-300 hover:text-green-500">About Us</Link></li>
+                <li><Link href="/privacypolicy" className="text-gray-300 hover:text-green-500">Privacy Policy</Link></li>
+                <li><Link href="/termsandcondition" className="text-gray-300 hover:text-green-500">Terms & Conditions</Link></li>
+              </ul>
             </div>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold text-black dark:text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#about"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#projects"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#skills"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  Skills
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-black dark:text-white mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <span className="text-gray-600 dark:text-gray-400">Web Development</span>
-              </li>
-              <li>
-                <span className="text-gray-600 dark:text-gray-400">UI/UX Design</span>
-              </li>
-              <li>
-                <span className="text-gray-600 dark:text-gray-400">API Development</span>
-              </li>
-              <li>
-                <span className="text-gray-600 dark:text-gray-400">Consulting</span>
-              </li>
-            </ul>
-          </div>
         </div>
-        <Skills />
+
+        <div className="mt-10 border-t border-green-500 pt-4 text-center">
+          <p className="text-sm text-gray-300">
+            © {new Date().getFullYear()} Quizzer. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
