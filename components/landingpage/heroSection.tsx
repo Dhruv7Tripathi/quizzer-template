@@ -1,234 +1,152 @@
-"use client"
+"use client";
+import { useState } from "react";
+import Navbar from "./navbar";
+import Footer from "./footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faqItems } from "@/contants";
+import Link from "next/link";
+// import FeedbackButton from "../secondry/feedbackbutton";
+import { SparklesCore } from "../ui/sparkles";
+import { ChevronRight } from "lucide-react";
 
-import { CardHoverEffectDemo } from "../ui/card"
-import Image from "next/image"
-import Footer from "./footer"
-import Navbar from "./navbar"
-import Link from "next/link"
-import { motion } from "framer-motion"
+export default function LandingPage() {
+  const [isHovered, setIsHovered] = useState(false);
+  const SparklesSection = () => (
+    <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-[2px] blur-sm w-3/4" />
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-px w-3/4" />
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-[5px] blur-sm w-1/4" />
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-px w-1/4" />
+      <SparklesCore
+        background="transparent"
+        minSize={0.4}
+        maxSize={1}
+        particleDensity={1200}
+        className="w-full h-full"
+        particleColor="#FFFFFF"
+      />
+      <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+    </div>
+  );
 
-const HeroSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
+  const steps = [
+    {
+      step: 1,
+      title: "Enter Your Topic",
+      desc: "Simply type in the subject you want to create a quiz about.",
     },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
+    {
+      step: 2,
+      title: "Customize Options",
+      desc: "Select difficulty level, question types, and other preferences.",
     },
-  }
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8, x: 50 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-      },
+    {
+      step: 3,
+      title: "Generate & Share",
+      desc: "Get your quiz instantly and share it with students or friends.",
     },
-  }
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  }
-
-  const ctaVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  }
+  ];
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black to-gray-950 text-white overflow-x-hidden">
       <Navbar />
-      <div className="min-h-screen bg-white dark:bg-black" style={{ marginLeft: "350px", marginRight: "350px" }}>
-        <motion.section
-          className="flex items-center justify-center text-black dark:text-white px-6 py-6"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
-          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <motion.div className="space-y-6 mt-12" variants={containerVariants}>
-              <motion.h1
-                className="text-4xl md:text-5xl sm:text-3xl lg:text-6xl font-bold leading-tight"
-                variants={itemVariants}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                Phoenix
-              </motion.h1>
-              <motion.h2
-                className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed"
-                variants={itemVariants}
-              >
-                Full Stack Developer passionate about building scalable web applications and delightful user
-                experiences.
-              </motion.h2>
-              <motion.p
-                className="text-lg text-gray-700 dark:text-gray-400 leading-relaxed max-w-lg"
-                variants={itemVariants}
-              >
-                Hi, I&apos;m Phoenix! I love turning ideas into reality with code. Whether it&apos;s crafting robust backends or
-                sleek frontends, I enjoy solving problems and learning new technologies. Let&apos;s build something amazing
-                together!
-              </motion.p>
-            </motion.div>
-            <motion.div
-              className="flex justify-center md:justify-end"
-              variants={imageVariants}
-              whileHover={{
-                scale: 1.05,
-                rotate: 2,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <Image
-                src="/phoenix2.jpg"
-                alt="Phoenix"
-                width={300}
-                height={300}
-                className="rounded-2xl shadow-2xl object-cover"
-              />
-            </motion.div>
+      <div className="flex-grow flex flex-col items-center justify-center px-4">
+        <main className="w-full min-h-screen max-w-4xl text-center py-16 sm:py-20 px-4 sm:px-6">
+          <div className="relative">
+            <div className="bg-black/60 backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-2 border border-white/10">
+              <span className="text-white text-sm">Welcome to Our Platform</span>
+              <ChevronRight className="h-4 w-4 text-green-400" />
+            </div>
+            <SparklesSection />
           </div>
-        </motion.section>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
+            <span>Transform your ideas into</span>
+            <br />
+            <span className="bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent">
+              beautiful digital experiences
+            </span>
+          </h1>
+          <p className="text-sm sm:text-base text-gray-300 max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12">
+            Instantly generate quizzes powered by AI — smart, customizable, and shareable in seconds.
+          </p>
 
-        <motion.section
-          className="px-6 py-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={sectionVariants}
-        >
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight"
-                variants={itemVariants}
-              >
-                Check Out My Latest Work
-              </motion.h2>
-              <motion.div className="w-full" variants={itemVariants} transition={{ delay: 0.2 }}>
-                <CardHoverEffectDemo />
-              </motion.div>
+          <Link href="/quizzes">
+            <button
+              className={`w-full sm:w-auto text-sm sm:text-base bg-gradient-to-r from-green-400 to-green-700 text-white font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300 ${isHovered ? "shadow-xl shadow-green-500/40 scale-105" : ""}`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              Get Started
+            </button>
+          </Link>
+        </main>
+
+        <section id="how-it-works" className="w-full py-16 sm:py-20">
+          <div className="container px-4 md:px-6">
+            <div className="text-center space-y-4 mb-12">
+              <div className="px-3 text-sm text-white">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter">
+                  How It Works
+                </h2>
+              </div>
+              <SparklesSection />
+              <p className="text-sm sm:text-base max-w-[600px] sm:max-w-[800px] mx-auto text-white">
+                Creating the perfect quiz has never been easier with our
+                streamlined process.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {steps.map((item) => (
+                <div
+                  key={item.step}
+                  className="flex flex-col items-center text-center space-y-4"
+                >
+                  <div className="h-14 w-14 sm:h-16 sm:w-16 flex items-center justify-center bg-green-700 rounded-full text-2xl sm:text-3xl font-bold">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-white">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </motion.section>
+        </section>
 
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={ctaVariants}
-        >
-          <motion.div
-            className="max-w-6xl mb-6 bg-zinc-300 dark:bg-zinc-900 text-black dark:text-white rounded-xl shadow-lg py-8 text-center"
-            whileHover={{
-              scale: 1.02,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-              transition: { duration: 0.3 },
-            }}
-          >
-            <motion.h1
-              className="text-2xl md:text-3xl font-bold leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              Let&apos;s create Something meaningful-work that stand out
-            </motion.h1>
-            <motion.p
-              className="text-gray-400 mt-2 text-sm md:text-base"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Freelance, full-time, or just vibing with an idea - I&apos;m all ears.
-            </motion.p>
-            <motion.div
-              className="mt-4 text-sm md:text-base text-gray-300 flex justify-center items-center gap-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <motion.span
-                animate={{
-                  x: [0, 5, 0],
-                  transition: {
-                    duration: 2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                  },
-                }}
-              >
-                👉
-              </motion.span>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href={"mailto:youremail.com"}
-                  className="hover:underline underline-offset-4 text-white font-medium"
-                >
-                  Email me
-                </Link>
-              </motion.div>
-              <span>or</span>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href="https://twitter.com/dhruvtripathi77"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline underline-offset-4 text-white font-medium"
-                >
-                  Connect on Twitter
-                </Link>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </motion.section>
+        <section className="w-full py-16 sm:py-20 bg-black/30">
+          <div className="container px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <Footer />
-        </motion.div>
+            <Accordion
+              type="single"
+              collapsible
+              className="max-w-3xl mx-auto divide-y dark:hover:bg-green-700 divide-gray-700"
+            >
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left dark:hover:text-green-700  sm:text-lg font-medium py-4 text-white">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-gray-200 pb-4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
       </div>
+      <Footer />
+      {/* <FeedbackButton /> */}
     </div>
-  )
+  );
 }
-
-export default HeroSection
