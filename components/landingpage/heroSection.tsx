@@ -13,7 +13,7 @@ import Link from "next/link";
 // import FeedbackButton from "../secondry/feedbackbutton";
 import { SparklesCore } from "../ui/sparkles";
 import { ChevronRight } from "lucide-react";
-
+import CtaSection from "./cta-section";
 export default function LandingPage() {
   const [isHovered, setIsHovered] = useState(false);
   const SparklesSection = () => (
@@ -53,7 +53,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black to-gray-950 text-white overflow-x-hidden">
+    <div className="min-h-screen  flex flex-col bg-gradient-to-br from-black to-gray-950 text-white overflow-x-hidden">
       <Navbar />
       <div className="flex-grow flex flex-col items-center justify-center px-4">
         <main className="w-full min-h-screen max-w-4xl text-center py-16 sm:py-20 px-4 sm:px-6">
@@ -64,17 +64,20 @@ export default function LandingPage() {
             </div>
             <SparklesSection />
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-            <span>Transform your ideas into</span>
-            <br />
-            <span className="bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent">
-              beautiful digital experiences
-            </span>
-          </h1>
-          <p className="text-sm sm:text-base text-gray-300 max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12">
-            Instantly generate quizzes powered by AI — smart, customizable, and shareable in seconds.
-          </p>
+          <div className="relative z-10 max-w-5xl mx-auto mb-8 sm:mb-12">
 
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
+              <span>Transform your ideas into</span>
+              <br />
+              <span className="bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent">
+                beautiful digital experiences
+              </span>
+            </h1>
+            <p className="text-sm sm:text-base text-neutral-300 max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12">
+              Instantly generate quizzes powered by AI — smart, customizable, and shareable in seconds.
+            </p>
+
+          </div>
           <Link href="/quizzes">
             <button
               className={`w-full sm:w-auto text-sm sm:text-base bg-gradient-to-r from-green-400 to-green-700 text-white font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300 ${isHovered ? "shadow-xl shadow-green-500/40 scale-105" : ""}`}
@@ -142,6 +145,10 @@ export default function LandingPage() {
             </Accordion>
           </div>
         </section>
+      </div>
+      <div className="max-w-9xl  ml-24 mr-24">
+
+        <CtaSection />
       </div>
       <Footer />
       {/* <FeedbackButton /> */}

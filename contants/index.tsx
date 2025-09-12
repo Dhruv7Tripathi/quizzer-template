@@ -1,8 +1,8 @@
 export const navItems = [
   { name: "Home", href: "/" },
-  { name: "Quizzes", href: "/quizzes" },
-  { name: "About", href: "/about" },
-  { name: "profile", href: "/profile" },
+  { name: "Quizzes", href: "/#" },
+  { name: "About", href: "/#" },
+  { name: "profile", href: "/#" },
 ];
 
 export const faqItems = [

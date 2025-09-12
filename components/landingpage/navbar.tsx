@@ -46,12 +46,15 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center space-x-4">
-            <button className="text-white font-semibold rounded-3xl">
+            <Link href={"/#"} className="text-white font-semibold rounded-3xl">
               Login
-            </button>
-            <button className="text-white font-semibold px-3 py-2 bg-green-500 hover:text-white transition-colors rounded-3xl">
+            </Link>
+            <Link
+              href={"/#"}
+              className="text-white font-semibold px-3 py-2 bg-green-500 hover:text-white transition-colors rounded-3xl"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
 
           <div className="md:hidden">
