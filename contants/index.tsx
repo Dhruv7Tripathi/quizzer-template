@@ -25,5 +25,9 @@ export const faqItems = [
   {
     question: "Can I track quiz results?",
     answer: "Yes! Our platform provides comprehensive analytics, including individual and aggregate quiz results, time taken, and performance insights."
-  }
+  },
+  {
+    question: "Can I customize the look of my quiz?",
+    answer: "Yes, you can choose from various themes, fonts, and colors to match your brand or personal style."
+  },
 ];
