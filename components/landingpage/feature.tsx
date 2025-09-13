@@ -1,4 +1,4 @@
-import { Feature } from "@/components/ui/feature-section-with-bento-grid";
+import { Feature } from "@/components/ui/feature-section";
 
 function FeatureSection() {
   return (

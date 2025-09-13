@@ -176,7 +176,7 @@ const CtaSection = () => {
             ease: "easeInOut",
           }}
           viewport={{ once: true }}
-          className="mx-auto max-w-5xl text-balance bg-gradient-to-br from-neutral-100 via-neutral-100 via-50% to-neutral-100/30 bg-clip-text pb-3 pt-1 text-center text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-[4.2rem]"
+          className="mx-auto p-2 max-w-5xl text-balance bg-gradient-to-br from-neutral-100 via-neutral-100 via-50% to-neutral-100/30 bg-clip-text pb-3 pt-1 text-center text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-[4.2rem]"
         >
           Effortless Quizzes for Everyone
         </motion.h1>

@@ -1,7 +1,9 @@
 import { User } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { SparklesCore } from "../ui/sparkles";
+import CardStatus from "../landingpage/card-status";
+import { SparklesCore } from "./sparkles";
 import AnimatedCardChart from "../landingpage/animated-card";
+import { AnimatedPin } from "../landingpage/3d-pin";
+import { WorldMapSection } from "../landingpage/map";
 function Feature() {
   const SparklesSection = () => (
     <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
@@ -21,7 +23,7 @@ function Feature() {
     </div>
   );
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full ">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           <div className="text-center space-y-4 mb-12">
@@ -61,36 +63,17 @@ function Feature() {
                 </p>
               </div>
             </div>
-            <div className="bg-muted rounded-md  aspect-square p-6 flex justify-between flex-col">
-              <User className="w-8 h-8 stroke-1" />
-              <div className="flex flex-col">
-                <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
-                  Our goal is to streamline SMB trade, making it easier and faster
-                  than ever.
-                </p>
-              </div>
+            <div className="bg-neutral-950 rounded-xl  flex justify-between flex-col">
+              <CardStatus />
             </div>
 
-            <div className="bg-muted rounded-md aspect-square p-6 flex justify-between flex-col">
-              <User className="w-8 h-8 stroke-1" />
-              <div className="flex flex-col">
-                <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
-                  Our goal is to streamline SMB trade, making it easier and faster
-                  than ever.
-                </p>
-              </div>
+            <div className="bg-neutral-950 rounded-md aspect-square p-6 flex justify-between flex-col">
+              {/* <User className="w-8 h-8 stroke-1" /> */}
+              <AnimatedPin />
+
             </div>
-            <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
-              <User className="w-8 h-8 stroke-1" />
-              <div className="flex flex-col">
-                <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
-                  Our goal is to streamline SMB trade, making it easier and faster
-                  than ever.
-                </p>
-              </div>
+            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
+              <WorldMapSection />
             </div>
           </div>
         </div>
