@@ -88,7 +88,7 @@ const Testimonial = () => {
   return (
     <div className="min-h-screen">
       {/* Example 1: Basic Carousel */}
-      <section className="py-12 bg-white dark:bg-neutral-950">
+      <section className="py-12 max-w-9xl bg-white dark:bg-black">
         <div className="max-w-5xl mx-auto px-4">
           <Carousel items={cards} />
         </div>

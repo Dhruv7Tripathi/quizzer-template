@@ -118,9 +118,29 @@ export default function LandingPage() {
       <div className="ml-24 mr-24" >
         <FeatureSection />
       </div>
-      <section className="w-full py-16 mt-12 sm:py-20 bg-white dark:bg-neutral-950">
-        <Testimonial />
+      <section className=" py-16 mt-12 sm:py-20 bg-white dark:bg-black">
+        <div className="max-w-6xl mx-auto px-6 sm:px-12">
+          <div className="text-center sm:text-left mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Testimonials
+            </h1>
+            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl sm:max-w-3xl">
+              Discover how our platform has helped users achieve their goals efficiently.
+              Read real stories from customers who transformed their workflow with us.
+              Your success could be the next testimonial we feature!
+            </p>
+            <div className="mt-6">
+              <button className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 transition">
+                Read Our Customer Stories
+              </button>
+            </div>
+          </div>
+
+          {/* Testimonials Carousel */}
+          <Testimonial />
+        </div>
       </section>
+
       <section className="w-full py-16 min-h-screen  sm:py-20 bg-black">
         <div className="mt-12">
 

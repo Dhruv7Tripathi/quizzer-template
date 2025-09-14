@@ -168,28 +168,6 @@ function Star({
   );
 }
 
-function InteractiveStarfield({
-  mousePosition,
-  containerRef,
-}: {
-  mousePosition: { x: number | null; y: number | null };
-  containerRef: React.RefObject<HTMLDivElement>;
-}) {
-  return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-      {Array.from({ length: 150 }).map((_, i) => (
-        <Star
-          key={`star-${i}`}
-          mousePosition={mousePosition}
-          containerRef={containerRef}
-        />
-      ))}
-    </div>
-  );
-}
-
-// --- PRICING COMPONENT LOGIC ---
-
 // Interfaces
 interface PricingPlan {
   name: string;
@@ -296,9 +274,6 @@ function PricingToggle() {
       const rect = annualBtnRef.current?.getBoundingClientRect();
       if (!rect) return;
 
-      const originX = (rect.left + rect.width / 2) / window.innerWidth;
-      const originY = (rect.top + rect.height / 2) / window.innerHeight;
-
 
     }
   };
@@ -333,7 +308,7 @@ function PricingToggle() {
               : "text-muted-foreground hover:text-foreground",
           )}
         >
-          Billed Annually
+          {/* Billed Annually */}
           {/* <span
             className={cn(
               "hidden sm:inline",
@@ -345,6 +320,7 @@ function PricingToggle() {
           </span> */}
         </button>
       </div>
+      <span className="ml-2 text-sm">Billed Anually</span>
     </div>
   );
 }
