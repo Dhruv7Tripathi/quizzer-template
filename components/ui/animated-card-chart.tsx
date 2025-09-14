@@ -122,8 +122,8 @@ const GridLayer: React.FC<{ color: string }> = ({ color }) => {
 const EllipseGradient: React.FC<{ color: string }> = ({ color }) => {
   return (
     <div className="absolute inset-0 z-[5] flex h-full w-full items-center justify-center">
-      <svg width="356" height="240" viewBox="0 0 356 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="356" height="240" fill="url(#paint0_radial_12_207)" />
+      <svg width="500" height="340" viewBox="0 0 500 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="340" fill="url(#paint0_radial_12_207)" />
         <defs>
           <radialGradient
             id="paint0_radial_12_207"
@@ -131,7 +131,7 @@ const EllipseGradient: React.FC<{ color: string }> = ({ color }) => {
             cy="0"
             r="1"
             gradientUnits="userSpaceOnUse"
-            gradientTransform="translate(178 120) rotate(90) scale(120 178)"
+            gradientTransform="translate(250 170) rotate(90) scale(170 250)"
           >
             <stop stopColor={color} stopOpacity="0.25" />
             <stop offset="0.34" stopColor={color} stopOpacity="0.15" />
@@ -168,8 +168,8 @@ const Layer1: React.FC<LayerProps> = ({ color, secondaryColor }) => {
 
 const Layer2: React.FC<{ color: string }> = ({ color }) => {
   return (
-    <div className="group relative h-full w-[356px]" style={{ "--color": color } as React.CSSProperties}>
-      <div className="ease-[cubic-bezier(0.6, 0.6, 0, 1)] absolute inset-0 z-[7] flex w-[356px] translate-y-full items-start justify-center bg-transparent p-4 transition-transform duration-500 group-hover/animated-card:translate-y-0">
+    <div className="group relative h-full w-[500px]" style={{ "--color": color } as React.CSSProperties}>
+      <div className="ease-[cubic-bezier(0.6, 0.6, 0, 1)] absolute inset-0 z-[7] flex w-[500px] translate-y-full items-start justify-center bg-transparent p-4 transition-transform duration-500 group-hover/animated-card:translate-y-0">
         <div className="ease-[cubic-bezier(0.6, 0, 1)] rounded-md border border-zinc-200 bg-white/25 p-1.5 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover/animated-card:opacity-100 dark:border-zinc-800 dark:bg-black/25">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 shrink-0 rounded-full bg-[var(--color)]" />
@@ -185,10 +185,10 @@ const Layer2: React.FC<{ color: string }> = ({ color }) => {
 const Layer3: React.FC<{ color: string }> = ({ color }) => {
   return (
     <div className="ease-[cubic-bezier(0.6, 0.6, 0, 1)] absolute inset-0 z-[6] flex translate-y-full items-center justify-center opacity-0 transition-all duration-500 group-hover/animated-card:translate-y-0 group-hover/animated-card:opacity-100">
-      <svg width="356" height="240" viewBox="0 0 356 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="356" height="240" fill="url(#paint0_linear_29_3)" />
+      <svg width="500" height="340" viewBox="0 0 500 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="340" fill="url(#paint0_linear_29_3)" />
         <defs>
-          <linearGradient id="paint0_linear_29_3" x1="178" y1="0" x2="178" y2="240" gradientUnits="userSpaceOnUse">
+          <linearGradient id="paint0_linear_29_3" x1="250" y1="0" x2="250" y2="340" gradientUnits="userSpaceOnUse">
             <stop offset="0.35" stopColor={color} stopOpacity="0" />
             <stop offset="1" stopColor={color} stopOpacity="0.3" />
           </linearGradient>
@@ -201,150 +201,150 @@ const Layer3: React.FC<{ color: string }> = ({ color }) => {
 const Layer4: React.FC<LayerProps> = ({ color, secondaryColor, hovered }) => {
   const rectsData = [
     {
-      width: 15,
-      height: 20,
-      y: 140,
-      hoverHeight: 20,
-      hoverY: 160,
-      x: 40,
-      fill: "currentColor",
-      hoverFill: secondaryColor,
-    },
-    {
-      width: 15,
-      height: 20,
-      y: 120,
-      hoverHeight: 20,
-      hoverY: 160,
+      width: 20,
+      height: 25,
+      y: 180,
+      hoverHeight: 25,
+      hoverY: 200,
       x: 60,
+      fill: "currentColor",
+      hoverFill: secondaryColor,
+    },
+    {
+      width: 20,
+      height: 25,
+      y: 160,
+      hoverHeight: 25,
+      hoverY: 200,
+      x: 85,
       fill: color,
       hoverFill: color,
     },
     {
-      width: 15,
-      height: 40,
-      y: 100,
-      hoverHeight: 30,
-      hoverY: 150,
-      x: 80,
-      fill: color,
-      hoverFill: color,
-    },
-    {
-      width: 15,
-      height: 30,
-      y: 110,
-      hoverHeight: 50,
-      hoverY: 130,
-      x: 100,
-      fill: color,
-      hoverFill: color,
-    },
-    {
-      width: 15,
-      height: 30,
-      y: 140,
+      width: 20,
+      height: 50,
+      y: 135,
       hoverHeight: 40,
-      hoverY: 140,
-      x: 120,
-      fill: "currentColor",
-      hoverFill: secondaryColor,
+      hoverY: 185,
+      x: 110,
+      fill: color,
+      hoverFill: color,
     },
     {
-      width: 15,
-      height: 50,
-      y: 140,
-      hoverHeight: 20,
+      width: 20,
+      height: 40,
+      y: 145,
+      hoverHeight: 65,
       hoverY: 160,
-      x: 140,
-      fill: "currentColor",
-      hoverFill: secondaryColor,
+      x: 135,
+      fill: color,
+      hoverFill: color,
     },
     {
-      width: 15,
-      height: 50,
-      y: 90,
-      hoverHeight: 30,
-      hoverY: 150,
+      width: 20,
+      height: 40,
+      y: 180,
+      hoverHeight: 50,
+      hoverY: 175,
       x: 160,
-      fill: color,
-      hoverFill: color,
+      fill: "currentColor",
+      hoverFill: secondaryColor,
     },
     {
-      width: 15,
-      height: 30,
-      y: 110,
-      hoverHeight: 20,
-      hoverY: 160,
-      x: 180,
-      fill: color,
-      hoverFill: color,
+      width: 20,
+      height: 65,
+      y: 180,
+      hoverHeight: 25,
+      hoverY: 200,
+      x: 185,
+      fill: "currentColor",
+      hoverFill: secondaryColor,
     },
     {
-      width: 15,
-      height: 20,
-      y: 140,
+      width: 20,
+      height: 65,
+      y: 120,
       hoverHeight: 40,
-      hoverY: 140,
-      x: 200,
-      fill: "currentColor",
-      hoverFill: secondaryColor,
-    },
-    {
-      width: 15,
-      height: 40,
-      y: 100,
-      hoverHeight: 60,
-      hoverY: 120,
-      x: 220,
+      hoverY: 185,
+      x: 210,
       fill: color,
       hoverFill: color,
     },
     {
-      width: 15,
-      height: 30,
-      y: 140,
-      hoverHeight: 70,
-      hoverY: 110,
-      x: 240,
-      fill: "currentColor",
-      hoverFill: secondaryColor,
+      width: 20,
+      height: 40,
+      y: 145,
+      hoverHeight: 25,
+      hoverY: 200,
+      x: 235,
+      fill: color,
+      hoverFill: color,
     },
     {
-      width: 15,
-      height: 50,
-      y: 140,
+      width: 20,
+      height: 25,
+      y: 180,
       hoverHeight: 50,
-      hoverY: 130,
+      hoverY: 175,
       x: 260,
       fill: "currentColor",
       hoverFill: secondaryColor,
     },
     {
-      width: 15,
-      height: 20,
-      y: 140,
-      hoverHeight: 80,
-      hoverY: 100,
-      x: 280,
+      width: 20,
+      height: 50,
+      y: 135,
+      hoverHeight: 75,
+      hoverY: 150,
+      x: 285,
+      fill: color,
+      hoverFill: color,
+    },
+    {
+      width: 20,
+      height: 40,
+      y: 180,
+      hoverHeight: 90,
+      hoverY: 135,
+      x: 310,
       fill: "currentColor",
       hoverFill: secondaryColor,
     },
     {
-      width: 15,
-      height: 30,
-      y: 110,
-      hoverHeight: 90,
-      hoverY: 90,
-      x: 300,
+      width: 20,
+      height: 65,
+      y: 180,
+      hoverHeight: 65,
+      hoverY: 160,
+      x: 335,
+      fill: "currentColor",
+      hoverFill: secondaryColor,
+    },
+    {
+      width: 20,
+      height: 25,
+      y: 180,
+      hoverHeight: 100,
+      hoverY: 125,
+      x: 360,
+      fill: "currentColor",
+      hoverFill: secondaryColor,
+    },
+    {
+      width: 20,
+      height: 40,
+      y: 145,
+      hoverHeight: 115,
+      hoverY: 110,
+      x: 385,
       fill: color,
       hoverFill: color,
     },
   ]
 
   return (
-    <div className="z-[8] flex h-[180px] w-[356px] items-center justify-center text-neutral-800/10 transition-transform duration-500 group-hover/animated-card:scale-150 dark:text-white/15">
-      <svg width="356" height="180" xmlns="http://www.w3.org/2000/svg">
+    <div className="z-[8] flex h-[240px] w-[500px] items-center justify-center text-neutral-800/10 transition-transform duration-500 group-hover/animated-card:scale-150 dark:text-white/15">
+      <svg width="500" height="240" xmlns="http://www.w3.org/2000/svg">
         {rectsData.map((rect, index) => (
           <rect
             key={index}

@@ -14,57 +14,82 @@ import { FeatureSection } from "./feature";
 import { SparklesCore } from "../ui/sparkles";
 import { ChevronRight } from "lucide-react";
 import CtaSection from "./cta-section";
+import { PricingSection } from "@/components/ui/pricing";
+
+// Demo data for the pricing plans
+const demoPlans = [
+  {
+    name: "Starter",
+    price: "50",
+    yearlyPrice: "40",
+    period: "month",
+    features: [
+      "Up to 10 projects",
+      "Basic analytics",
+      "48-hour support response time",
+      "Limited API access",
+      "Community support",
+    ],
+    description: "Perfect for individuals and small projects.",
+    buttonText: "Start Free Trial",
+    href: "#",
+  },
+  {
+    name: "Professional",
+    price: "99",
+    yearlyPrice: "79",
+    period: "month",
+    features: [
+      "Unlimited projects",
+      "Advanced analytics",
+      "24-hour support response time",
+      "Full API access",
+      "Priority support & Team collaboration",
+    ],
+    description: "Ideal for growing teams and businesses.",
+    buttonText: "Get Started",
+    href: "#",
+    isPopular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "299",
+    yearlyPrice: "239",
+    period: "month",
+    features: [
+      "Everything in Professional",
+      "Custom solutions & integrations",
+      "Dedicated account manager",
+      "SSO Authentication & Advanced security",
+    ],
+    description: "For large organizations with specific needs.",
+    buttonText: "Contact Sales",
+    href: "#",
+  },
+];
+
 export default function LandingPage() {
   const [isHovered, setIsHovered] = useState(false);
-  const SparklesSection = () => (
-    <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-[2px] blur-sm w-3/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-px w-3/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-[5px] blur-sm w-1/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-px w-1/4" />
-      <SparklesCore
-        background="transparent"
-        minSize={0.4}
-        maxSize={1}
-        particleDensity={1200}
-        className="w-full h-full"
-        particleColor="#FFFFFF"
-      />
-      <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-    </div>
-  );
-
-  const steps = [
-    {
-      step: 1,
-      title: "Enter Your Topic",
-      desc: "Simply type in the subject you want to create a quiz about.",
-    },
-    {
-      step: 2,
-      title: "Customize Options",
-      desc: "Select difficulty level, question types, and other preferences.",
-    },
-    {
-      step: 3,
-      title: "Generate & Share",
-      desc: "Get your quiz instantly and share it with students or friends.",
-    },
-  ];
-
   return (
     //overflow-x-hidden
     <div className="min-h-screen  flex flex-col bg-black text-white ">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <div className=" px-4"> */}
-      <main className="w-full min-h-screen justify-center items-center flex flex-col mx-auto max-w-4xl text-center py-16 sm:py-20 px-4 sm:px-6">
+      <main className="w-full min-h-screen items-start max-w-4xl text-center py-16 sm:py-20 px-4 sm:px-6">
         <div className="relative">
+          <div
+            className="absolute -z-10 inset-0 opacity-80 h-[600px] w-full 
+        bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] 
+        dark:bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]
+        bg-[size:6rem_5rem] 
+        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+          />
           <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-2 border border-white/10">
             <span className="text-white text-sm">Welcome to Our Platform</span>
             <ChevronRight className="h-4 w-4 text-green-400" />
           </div>
-          <SparklesSection />
-          <div className="relative z-10 max-w-5xl mx-auto mb-8 sm:mb-12">
+          {/* <SparklesSection /> */}
+          <div className="relative z-10 max-w-5xl mb-8 sm:mb-12">
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
               <span>Transform your ideas into</span>
@@ -86,6 +111,11 @@ export default function LandingPage() {
             </button>
           </Link>
         </div>
+        <div
+          className="animate-fade-up relative mt-32 opacity-0 [perspective:2000px] 
+        after:absolute after:inset-0 after:z-50 
+        after:[background:linear-gradient(to_top,hsl(var(--background))_10%,transparent)]"
+        />
       </main>
       <div className="ml-24 mr-24" >
         <FeatureSection />
@@ -152,7 +182,14 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      {/* </div> */}
+      <div className="max-w-9xl  ml-24 mr-24">
+
+        <PricingSection
+          plans={demoPlans}
+          title="Find the Perfect Plan"
+          description="Select the ideal package for your needs and start building today."
+        />
+      </div>
       <div className="max-w-9xl  ml-24 mr-24">
 
         <CtaSection />

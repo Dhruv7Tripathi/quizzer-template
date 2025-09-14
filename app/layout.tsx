@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next"
+import Navbar from "@/components/landingpage/navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PortFolio",
-  description: "Created for showcasing my work and skills",
+  title: "Template - LayrdUI",
+  description: "Quizzer Template built with heart by LayrdUI",
 };
 
 export default function RootLayout({
@@ -33,6 +34,7 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
       >
+          <Navbar />
           {children}
         </ThemeProvider>
         <Analytics />
