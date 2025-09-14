@@ -6,7 +6,7 @@ export function AnimatedPin() {
   return (
     <div className="h-[20rem]  w-full flex items-center justify-center bg-foreground dark:bg-neutral-950">
       <PinContainer title="Explore Space" href="https://github.com/serafimcloud">
-        <div className="flex flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[20rem] bg-gradient-to-b from-slate-800/50 to-slate-800/0 backdrop-blur-sm border border-slate-700/50 rounded-2xl">
+        <div className="flex flex-col p-2 tracking-tight text-slate-100/50 w-[24rem] h-[20rem] bg-gradient-to-b from-slate-800/50 to-slate-800/0 backdrop-blur-sm border border-slate-700/50 rounded-xl">
           <div className="flex items-center gap-2">
             <div className="size-3 rounded-full bg-red-500 animate-pulse" />
             <div className="text-xs text-slate-400">Live Connection</div>

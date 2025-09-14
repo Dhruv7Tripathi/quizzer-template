@@ -18,7 +18,7 @@ const FrameworkAgnostic = ({
       className={cn(
         "relative",
         "flex flex-col justify-between",
-        "h-[20rem] space-y-4",
+        "h-[22rem] space-y-4",
         "rounded-md border border-neutral-800/50 bg-neutral-950",
       )}
     >
@@ -77,7 +77,7 @@ const FrameworkCard = () => {
 
   const cardClasses =
     "flex aspect-square items-center justify-center rounded-md border border-neutral-800 bg-gradient-to-b from-neutral-700 to-neutral-900 p-4 " +
-    "[@media(min-width:320px)]:h-20 [@media(min-width:500px)]:h-36 " +
+    "[@media(min-width:320px)]:h-20 [@media(min-width:800px)]:h-36 " +
     "transition-transform duration-1000 ease-out will-change-transform";
 
   return (
@@ -133,13 +133,13 @@ const FrameworkCard = () => {
           )}
         >
           <div className={cardClasses} style={{ transform: reactTransform }}>
-            <ReactIcon className="size-6 text-neutral-100 [@media(min-width:500px)]:size-9" />
+            <ReactIcon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
           <div className={cardClasses} style={{ transform: nextJsTransform }}>
-            <NextjsIcon className="size-6 text-neutral-100 [@media(min-width:500px)]:size-9" />
+            <NextjsIcon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
           <div className={cardClasses} style={{ transform: htmlTransform }}>
-            <HTML5Icon className="size-6 text-neutral-100 [@media(min-width:500px)]:size-9" />
+            <HTML5Icon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
         </div>
 

@@ -63,7 +63,7 @@ function Feature() {
               <CardStatus />
             </div>
 
-            <div className="bg-neutral-950 rounded-md  flex justify-between flex-col">
+            <div className="bg-neutral-950 rounded-xl  flex justify-between flex-col">
               <AnimatedPin />
 
             </div>
