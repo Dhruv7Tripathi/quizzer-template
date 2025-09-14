@@ -248,7 +248,7 @@ export function PricingSection({
           mousePosition={mousePosition}
           containerRef={containerRef}
         /> */}
-        <div className="relative z-10 container mx-auto px-4 md:px-6">
+        <div className="relative z-10 ml-24 container mx-auto px-6 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-neutral-900 dark:text-white">
               {title}
@@ -321,7 +321,7 @@ function PricingToggle() {
               : "text-muted-foreground hover:text-foreground",
           )}
         >
-          Monthly
+
         </button>
         <button
           ref={annualBtnRef}
@@ -333,8 +333,8 @@ function PricingToggle() {
               : "text-muted-foreground hover:text-foreground",
           )}
         >
-          Annual
-          <span
+          Billed Annually
+          {/* <span
             className={cn(
               "hidden sm:inline",
               !isMonthly ? "text-primary-foreground/80" : "",
@@ -342,7 +342,7 @@ function PricingToggle() {
           >
             {" "}
             (Save 20%)
-          </span>
+          </span> */}
         </button>
       </div>
     </div>
@@ -372,17 +372,17 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
       className={cn(
         "rounded-2xl p-8 flex flex-col relative bg-background/70 backdrop-blur-sm",
         plan.isPopular
-          ? "border-2 border-primary shadow-xl"
+          ? "border-2 border-green-500 shadow-xl"
           : "border border-border",
       )}
     >
       {plan.isPopular && (
         <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-          <div className="bg-primary py-1.5 px-4 rounded-full flex items-center gap-1.5">
-            <LucideStar className="text-primary-foreground h-4 w-4 fill-current" />
-            <span className="text-primary-foreground text-sm font-semibold">
+          <div className="bg-green-600 py-1.5 px-4 rounded-full flex items-center gap-1.5">
+            {/* <LucideStar className="text-primary-foreground h-4 w-4 fill-current" /> */}
+            {/* <span className="text-primary-foreground text-sm font-semibold">
               Most Popular
-            </span>
+            </span> */}
           </div>
         </div>
       )}
