@@ -18,8 +18,7 @@ export function cn(...inputs: ClassValue[]) {
 
 // --- Card Components ---
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
-
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> { }
 export function AnimatedCard({ className, ...props }: CardProps) {
   return (
     <div
@@ -27,13 +26,14 @@ export function AnimatedCard({ className, ...props }: CardProps) {
       aria-labelledby="card-title"
       aria-describedby="card-description"
       className={cn(
-        "group/animated-card relative w-[356px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-900 dark:bg-black",
+        "group/animated-card relative h-[360px] w-[875px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-900 dark:bg-black",
         className
       )}
       {...props}
     />
   );
 }
+
 
 export function CardBody({ className, ...props }: CardProps) {
   return (
@@ -48,7 +48,7 @@ export function CardBody({ className, ...props }: CardProps) {
   );
 }
 
-interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
+interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> { }
 
 export function CardTitle({ className, ...props }: CardTitleProps) {
   return (
@@ -63,7 +63,7 @@ export function CardTitle({ className, ...props }: CardTitleProps) {
 }
 
 interface CardDescriptionProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {}
+  extends React.HTMLAttributes<HTMLParagraphElement> { }
 
 export function CardDescription({ className, ...props }: CardDescriptionProps) {
   return (
@@ -80,12 +80,11 @@ export function CardDescription({ className, ...props }: CardDescriptionProps) {
 export function CardVisual({ className, ...props }: CardProps) {
   return (
     <div
-      className={cn("h-[180px] w-[356px] overflow-hidden", className)}
+      className={cn("h-[360px] w-[875px] overflow-hidden", className)}
       {...props}
     />
   );
 }
-
 // --- Visual3 Component and its Sub-components ---
 
 interface Visual3Props {
@@ -93,34 +92,18 @@ interface Visual3Props {
   secondaryColor?: string;
   gridColor?: string;
 }
-
-export function Visual3({
-  mainColor = "#8b5cf6",
-  secondaryColor = "#fbbf24",
-  gridColor = "#80808015",
-}: Visual3Props) {
+export function Visual3({ mainColor = "#8b5cf6", secondaryColor = "#fbbf24", gridColor = "#80808015" }: Visual3Props) {
   const [hovered, setHovered] = useState(false);
-
   return (
     <>
       <div
         className="absolute inset-0 z-20"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={
-          {
-            "--color": mainColor,
-            "--secondary-color": secondaryColor,
-          } as React.CSSProperties
-        }
+        style={{ "--color": mainColor, "--secondary-color": secondaryColor } as React.CSSProperties}
       />
-
-      <div className="relative h-[180px] w-[356px] overflow-hidden rounded-t-lg">
-        <Layer4
-          color={mainColor}
-          secondaryColor={secondaryColor}
-          hovered={hovered}
-        />
+      <div className="relative h-[360px] w-[875px] mx-auto overflow-hidden rounded-t-lg flex items-center justify-center">
+        <Layer4 color={mainColor} secondaryColor={secondaryColor} hovered={hovered} />
         <Layer3 color={mainColor} />
         <Layer2 color={mainColor} />
         <Layer1 color={mainColor} secondaryColor={secondaryColor} />
@@ -130,7 +113,6 @@ export function Visual3({
     </>
   );
 }
-
 interface LayerProps {
   color: string;
   secondaryColor?: string;

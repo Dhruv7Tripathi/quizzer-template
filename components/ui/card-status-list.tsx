@@ -43,11 +43,11 @@ export function AnimatedCardStatusList({
   // Cycle through dash indices every 100ms
   useEffect(() => {
     if (shouldReduceMotion) return;
-    
+
     const interval = setInterval(() => {
       setActiveDashIndex(prev => (prev + 1) % 8);
     }, 100);
-    
+
     return () => clearInterval(interval);
   }, [shouldReduceMotion]);
 
@@ -58,13 +58,13 @@ export function AnimatedCardStatusList({
     }
 
     // Update internal state
-    setCards(prev => prev.map(card => 
+    setCards(prev => prev.map(card =>
       card.id === cardId ? { ...card, status: "syncing" as const } : card
     ));
 
     // Simulate sync completion after 2.5 seconds
     setTimeout(() => {
-      setCards(prev => prev.map(card => 
+      setCards(prev => prev.map(card =>
         card.id === cardId ? { ...card, status: "completed" as const } : card
       ));
     }, 2500);
@@ -88,12 +88,12 @@ export function AnimatedCardStatusList({
         return (
           <svg width="16" height="16" viewBox="0 0 16 16" className="drop-shadow-sm">
             <circle cx="8" cy="8" r="8" fill="#22c55e" />
-            <path 
-              d="M5 8l2.5 2.5 3.5-4" 
-              stroke="white" 
-              strokeWidth="1.5" 
-              fill="none" 
-              strokeLinecap="round" 
+            <path
+              d="M5 8l2.5 2.5 3.5-4"
+              stroke="white"
+              strokeWidth="1.5"
+              fill="none"
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
@@ -101,26 +101,26 @@ export function AnimatedCardStatusList({
       case "updates-found":
         return (
           <svg width="16" height="16" viewBox="0 0 16 16">
-            <path 
-              d="M8 1.5L14.5 13H1.5L8 1.5Z" 
-              fill="#eab308" 
-              stroke="#eab308" 
+            <path
+              d="M8 1.5L14.5 13H1.5L8 1.5Z"
+              fill="#eab308"
+              stroke="#eab308"
               strokeWidth="1"
               strokeLinejoin="round"
             />
-            <path 
-              d="M8 6v3M8 11h0" 
-              stroke="white" 
-              strokeWidth="1.5" 
+            <path
+              d="M8 6v3M8 11h0"
+              stroke="white"
+              strokeWidth="1.5"
               strokeLinecap="round"
             />
           </svg>
         );
       case "syncing":
         return (
-          <svg 
-            width="16" 
-            height="16" 
+          <svg
+            width="16"
+            height="16"
             viewBox="0 0 16 16"
           >
             {/* Create 8 dashes around the circle */}
@@ -129,16 +129,16 @@ export function AnimatedCardStatusList({
               const radian = (angle * Math.PI) / 180;
               const radius = 6;
               const dashLength = 1.8;
-              
+
               // Calculate start and end points for each dash
-              const startX = 8 + (radius - dashLength/2) * Math.cos(radian);
-              const startY = 8 + (radius - dashLength/2) * Math.sin(radian);
-              const endX = 8 + (radius + dashLength/2) * Math.cos(radian);
-              const endY = 8 + (radius + dashLength/2) * Math.sin(radian);
-              
+              const startX = 8 + (radius - dashLength / 2) * Math.cos(radian);
+              const startY = 8 + (radius - dashLength / 2) * Math.sin(radian);
+              const endX = 8 + (radius + dashLength / 2) * Math.cos(radian);
+              const endY = 8 + (radius + dashLength / 2) * Math.sin(radian);
+
               // Use the activeDashIndex to determine which dash is white
               const isActive = index === activeDashIndex;
-              
+
               return (
                 <line
                   key={index}
@@ -187,9 +187,9 @@ export function AnimatedCardStatusList({
   });
 
   return (
-    <div className={`w-full mx-auto p-6 ${className}`}>
+    <div className={`w-full mx-auto ${className}`}>
       {/* Container with border */}
-      <div className="border border-border/30 rounded-2xl p-6 bg-card">
+      <div className="border border-border/30 rounded-xl p-6 bg-card">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <motion.button
@@ -200,9 +200,9 @@ export function AnimatedCardStatusList({
           >
             <ChevronLeft className="w-4 h-4" />
           </motion.button>
-          
+
           <h1 className="text-xl font-medium text-foreground">{title}</h1>
-          
+
           <motion.button
             onClick={handleAddCard}
             className="p-2 rounded-lg bg-card cursor-pointer border border-border/50 hover:bg-accent transition-colors"
@@ -214,7 +214,7 @@ export function AnimatedCardStatusList({
         </div>
 
         {/* Cards */}
-        <motion.div 
+        <motion.div
           className="space-y-3"
           variants={{
             visible: {
@@ -235,31 +235,31 @@ export function AnimatedCardStatusList({
                 layoutId={card.id}
                 variants={{
                   hidden: { opacity: 0, y: 20, scale: 0.98 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0, 
+                  visible: {
+                    opacity: 1,
+                    y: 0,
                     scale: 1,
-                    transition: { 
-                      type: "spring", 
-                      stiffness: 300, 
+                    transition: {
+                      type: "spring",
+                      stiffness: 300,
                       damping: 30,
                       duration: shouldReduceMotion ? 0.2 : undefined
                     }
                   }
                 }}
-                exit={{ 
-                  opacity: 0, 
-                  y: -20, 
+                exit={{
+                  opacity: 0,
+                  y: -20,
                   scale: 0.98,
-                  transition: { 
+                  transition: {
                     duration: shouldReduceMotion ? 0.15 : 0.2,
                     ease: "easeInOut"
                   }
                 }}
                 transition={{
-                  layout: { 
-                    type: "spring", 
-                    stiffness: 400, 
+                  layout: {
+                    type: "spring",
+                    stiffness: 400,
                     damping: 30,
                     duration: shouldReduceMotion ? 0.2 : 0.5
                   }
@@ -269,7 +269,7 @@ export function AnimatedCardStatusList({
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card */}
-                <motion.div 
+                <motion.div
                   className="relative bg-muted/50 border border-border/50 rounded-xl p-4 overflow-hidden"
                   whileHover={{
                     y: -1,
@@ -288,15 +288,15 @@ export function AnimatedCardStatusList({
                 >
                   {/* Gradient overlay for status */}
                   {(card.status === "updates-found" || card.status === "syncing") && (
-                    <div className={`absolute inset-0 bg-gradient-to-l ${getGradientClass(card.status)} pointer-events-none`} 
-                         style={{ 
-                           backgroundSize: "40% 100%", 
-                           backgroundPosition: "right",
-                           backgroundRepeat: "no-repeat"
-                         }} 
+                    <div className={`absolute inset-0 bg-gradient-to-l ${getGradientClass(card.status)} pointer-events-none`}
+                      style={{
+                        backgroundSize: "40% 100%",
+                        backgroundPosition: "right",
+                        backgroundRepeat: "no-repeat"
+                      }}
                     />
                   )}
-                  
+
                   <div className="relative flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {/* Status Icon */}
@@ -304,24 +304,24 @@ export function AnimatedCardStatusList({
                         <AnimatePresence mode="wait">
                           <motion.div
                             key={card.status}
-                            initial={{ 
+                            initial={{
                               x: card.status === "completed" ? 24 : 0,
-                              scale: 0.8, 
-                              opacity: 0 
+                              scale: 0.8,
+                              opacity: 0
                             }}
-                            animate={{ 
+                            animate={{
                               x: 0,
-                              scale: 1, 
-                              opacity: 1 
+                              scale: 1,
+                              opacity: 1
                             }}
-                            exit={{ 
+                            exit={{
                               x: card.status === "syncing" ? -24 : 0,
-                              scale: 0.8, 
-                              opacity: 0 
+                              scale: 0.8,
+                              opacity: 0
                             }}
-                            transition={{ 
-                              type: "spring", 
-                              stiffness: 400, 
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
                               damping: 25,
                               duration: shouldReduceMotion ? 0.15 : undefined
                             }}
@@ -330,7 +330,7 @@ export function AnimatedCardStatusList({
                           </motion.div>
                         </AnimatePresence>
                       </div>
-                      
+
                       {/* Title */}
                       <span className="text-foreground truncate max-w-[200px]">{card.title}</span>
                     </div>
@@ -344,14 +344,14 @@ export function AnimatedCardStatusList({
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0, opacity: 0 }}
-                            whileHover={{ 
+                            whileHover={{
                               scale: 1.02,
                               transition: { type: "spring", stiffness: 400, damping: 25 }
                             }}
                             whileTap={{ scale: 0.98 }}
-                            transition={{ 
-                              type: "spring", 
-                              stiffness: 400, 
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
                               damping: 25,
                               duration: shouldReduceMotion ? 0.15 : undefined
                             }}

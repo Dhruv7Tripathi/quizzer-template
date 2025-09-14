@@ -4,14 +4,14 @@ import {
   CardDescription,
   CardTitle,
   CardVisual,
-} from "@/components/animated-card-chart"
-import { Visual3 } from "@/components/animated-card-chart"
+} from "@/components/ui/animated-card-chart"
+import { Visual3 } from "@/components/ui/animated-card-chart"
 
 export default function AnimatedCardChart() {
   return (
     <AnimatedCard>
       <CardVisual>
-        <Visual3 mainColor="#ff6900" secondaryColor="#f54900" />
+        <Visual3 mainColor="#22c55e" secondaryColor="#16a34a" />
       </CardVisual>
       <CardBody>
         <CardTitle>Just find the right caption</CardTitle>

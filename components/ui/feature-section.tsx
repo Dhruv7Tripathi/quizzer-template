@@ -3,7 +3,16 @@ import CardStatus from "../landingpage/card-status";
 import { SparklesCore } from "./sparkles";
 import AnimatedCardChart from "../landingpage/animated-card";
 import { AnimatedPin } from "../landingpage/3d-pin";
-import { WorldMapSection } from "../landingpage/map";
+import FrameworkAgnostic from "./framework-agnostic";
+import {
+  AnimatedCard,
+  CardBody,
+  CardDescription,
+  CardTitle,
+  CardVisual,
+} from "@/components/ui/animated-card-chart"
+import { Visual3 } from "@/components/ui/animated-card-chart"
+
 function Feature() {
   const SparklesSection = () => (
     <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
@@ -33,47 +42,36 @@ function Feature() {
               </h2>
               <SparklesSection />
             </div>
-            {/* <p className="text-sm sm:text-base max-w-[600px] sm:max-w-[800px] mx-auto text-white">
-              Creating the perfect quiz has never been easier with our
-              streamlined process.
-            </p> */}
           </div>
-          {/* <div className="flex gap-4 flex-col items-start">
-            <div>
-              <Badge>Platform</Badge>
-            </div>
-            <div className="flex gap-2 flex-col">
-              <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">
-                Something new!
-              </h2>
-              <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground  text-left">
-                Managing a small business today is already tough.
-              </p>
-            </div>
-          </div> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
-              {/* <User className="w-8 h-8 stroke-1" /> */}
-              <AnimatedCardChart />
-              <div className="flex flex-col">
-                <h3 className="text-xl tracking-tight">Pay supplier invoices</h3>
-                <p className="text-muted-foreground max-w-xs text-base">
-                  Our goal is to streamline SMB trade, making it easier and faster
-                  than ever.
-                </p>
-              </div>
+            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2  flex justify-between flex-col">
+              {/* <AnimatedCardChart /> */}
+              <AnimatedCard>
+                <CardVisual>
+                  <Visual3 mainColor="#22c55e" secondaryColor="#16a34a" />
+                </CardVisual>
+                <CardBody>
+                  <CardTitle>Just find the right caption</CardTitle>
+                  <CardDescription>
+                    This card will tell everything you want
+                  </CardDescription>
+                </CardBody>
+              </AnimatedCard>
+
             </div>
             <div className="bg-neutral-950 rounded-xl  flex justify-between flex-col">
               <CardStatus />
             </div>
 
-            <div className="bg-neutral-950 rounded-md aspect-square p-6 flex justify-between flex-col">
-              {/* <User className="w-8 h-8 stroke-1" /> */}
+            <div className="bg-neutral-950 rounded-md  flex justify-between flex-col">
               <AnimatedPin />
 
             </div>
-            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
-              <WorldMapSection />
+            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2 aspect-square lg:aspect-auto flex justify-between flex-col">
+              <FrameworkAgnostic
+                cardTitle="Framework Agnostic"
+              // cardDescription="Seamlessly integrate with any tech stack, whether it's Next.js,React, HTML, or anything else. Statsio works everywhere."
+              />
             </div>
           </div>
         </div>

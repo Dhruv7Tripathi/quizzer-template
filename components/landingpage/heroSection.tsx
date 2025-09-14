@@ -123,30 +123,33 @@ export default function LandingPage() {
         </div>
       </section> */}
 
-      <section className="w-full py-16 sm:py-20 bg-black/30">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
+      <section className="w-full py-16 min-h-screen  sm:py-20 bg-black">
+        <div className="mt-12">
 
-          <Accordion
-            type="single"
-            collapsible
-            className="max-w-3xl mx-auto divide-y dark:hover:text-neutral-400 divide-neutral-700"
-          >
-            {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left dark:hover:text-green-700  sm:text-lg font-medium py-4 text-white">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm sm:text-base text-gray-200 pb-4">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="container px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-serif md:text-4xl font-bold mb-4">
+                FAQ's
+              </h2>
+            </div>
+
+            <Accordion
+              type="single"
+              collapsible
+              className="max-w-3xl mx-auto divide-y dark:hover:text-neutral-400 divide-neutral-700"
+            >
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left dark:hover:text-green-700  sm:text-lg font-medium py-4 text-white">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-gray-200 pb-4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
       {/* </div> */}
