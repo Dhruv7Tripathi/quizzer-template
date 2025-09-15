@@ -66,7 +66,7 @@ const FrameworkCard = () => {
   }, []);
 
   const cardClasses =
-    "flex aspect-square items-center justify-center rounded-md border border-neutral-800 bg-gradient-to-b from-neutral-700 to-neutral-900 p-4 " +
+    "flex aspect-square items-center justify-center rounded-md border border-neutral-200 dark:border-neutral-800 bg-gradient-to-b from:neutral-300 to-neutral-100 dark:from-neutral-700 dark:to-neutral-900 p-4 " +
     "[@media(min-width:320px)]:h-20 [@media(min-width:800px)]:h-36 " +
     "transition-transform duration-1000 ease-out will-change-transform";
 
@@ -123,17 +123,17 @@ const FrameworkCard = () => {
           )}
         >
           <div className={cardClasses} style={{ transform: reactTransform }}>
-            <ReactIcon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
+            <ReactIcon className="size-6 text-neutral-900 dark:text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
           <div className={cardClasses} style={{ transform: nextJsTransform }}>
-            <NextjsIcon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
+            <NextjsIcon className="size-6 text-neutral-900 dark:text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
           <div className={cardClasses} style={{ transform: htmlTransform }}>
-            <HTML5Icon className="size-6 text-neutral-100 [@media(min-width:800px)]:size-12" />
+            <HTML5Icon className="size-6 text-neutral-900 dark:text-neutral-100 [@media(min-width:800px)]:size-12" />
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 h-3 w-full bg-gradient-to-t from-neutral-950 to-transparent" />
+        <div className="absolute bottom-0 left-0 h-3 w-full bg-gradient-to-t from-neutral-50 dark:from-neutral-950 to-transparent" />
       </div>
     </>
   );

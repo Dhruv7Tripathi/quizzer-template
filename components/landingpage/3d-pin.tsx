@@ -6,15 +6,15 @@ export function AnimatedPin() {
   return (
     <div className="h-[20rem] rounded-xl w-full flex items-center justify-center bg-neutral-50 dark:bg-neutral-950">
       <PinContainer title="Explore Space" href="https://github.com/serafimcloud">
-        <div className="flex flex-col p-2 tracking-tight text-slate-100/50 w-[24rem] h-[20rem] bg-gradient-to-b from-slate-800/50 to-slate-800/0 backdrop-blur-sm border border-slate-700/50 rounded-xl">
+        <div className="flex flex-col p-2 tracking-tight text-slate-100/50 w-[24rem] h-[20rem] bg-gradient-to-b from-neutral-200 to-neutral-50 dark:from-slate-800/50 dark:to-slate-800/0 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700/50 rounded-xl">
           <div className="flex items-center gap-2">
             <div className="size-3 rounded-full bg-red-500 animate-pulse" />
-            <div className="text-xs text-slate-400">Live Connection</div>
+            <div className="text-xs text-neutral-600 dark:text-neutral-400">Live Connection</div>
           </div>
 
           {/* Content */}
           <div className="flex-1 mt-4 space-y-4">
-            <div className="text-2xl font-bold text-slate-100">
+            <div className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
               Space Station Alpha
             </div>
 
@@ -22,11 +22,11 @@ export function AnimatedPin() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <div className="text-3xl font-bold text-sky-400">427</div>
-                <div className="text-xs text-slate-400">Days in Orbit</div>
+                <div className="text-xs text-neutral-900 dark:text-neutral-400">Days in Orbit</div>
               </div>
               <div className="space-y-1">
                 <div className="text-3xl font-bold text-emerald-400">98%</div>
-                <div className="text-xs text-slate-400">Systems Online</div>
+                <div className="text-xs text-neutral-900 dark:text-neutral-400">Systems Online</div>
               </div>
             </div>
 
@@ -48,7 +48,7 @@ export function AnimatedPin() {
 
             {/* Footer */}
             <div className="flex justify-between items-end">
-              <div className="text-xs text-slate-400">
+              <div className="text-xs text-neutral-900 dark:text-neutral-400">
                 Last ping: 3 seconds ago
               </div>
               <div className="text-sky-400 text-sm font-medium">

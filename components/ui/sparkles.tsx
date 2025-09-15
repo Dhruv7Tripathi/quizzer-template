@@ -6,7 +6,7 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "motion/react";
-
+import { useTheme } from "next-themes"; // ✅ Detect theme
 type ParticlesProps = {
   id?: string;
   className?: string;
@@ -30,6 +30,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -49,6 +50,13 @@ export const SparklesCore = (props: ParticlesProps) => {
       });
     }
   };
+  const fallbackBackground =
+    background ||
+    (theme === "light" ? "#ffffff" : "#0d47a1"); // Light: white, Dark: deep blue
+  const fallbackParticleColor =
+    particleColor ||
+    (theme === "light" ? "#000000" : "#ffffff"); // Light: black particles, Dark: white
+
 
   const generatedId = useId();
   return (
@@ -61,7 +69,7 @@ export const SparklesCore = (props: ParticlesProps) => {
           options={{
             background: {
               color: {
-                value: background || "#0d47a1",
+                value: fallbackBackground,
               },
             },
             fullScreen: {
@@ -122,7 +130,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 },
               },
               color: {
-                value: particleColor || "#ffffff",
+                value: fallbackParticleColor,
                 animation: {
                   h: {
                     count: 0,

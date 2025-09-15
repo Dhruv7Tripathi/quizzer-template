@@ -28,7 +28,7 @@ function Feature() {
         className="w-full h-full"
         particleColor="#FFFFFF"
       />
-      <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      <div className="absolute inset-0 w-full h-full bg-white dark:bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
     </div>
   );
   return (
@@ -36,8 +36,8 @@ function Feature() {
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           <div className="text-center space-y-4 mb-12">
-            <div className="px-3 text-sm text-white">
-              <h2 className="mx-auto max-w-5xl text-balance bg-gradient-to-br from-neutral-100 via-neutral-100 via-50% to-neutral-100/30 bg-clip-text pb-3 pt-1 text-center text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-[4.2rem]">
+            <div className="px-3 text-sm ">
+              <h2 className="mx-auto max-w-5xl text-balance bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-900/30 dark:from-neutral-100 dark:via-neutral-100 via-50% dark:to-neutral-100/30 bg-clip-text pb-3 pt-1 text-center text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-[4.2rem]">
                 Try Something New
               </h2>
               <SparklesSection />

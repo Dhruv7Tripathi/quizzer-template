@@ -92,7 +92,7 @@ export default function LandingPage() {
                 <div className="flex items-center gap-1 sm:gap-2">
                   {/* <Sparkles className="size-3 sm:size-4 text-primary" /> */}
                   <span className="text-foreground font-medium">
-                    <span className="animate-pulse text-green-400">🟢 </span>
+                    <span className="animate-pulse text-green-400" style={{ fontSize: "0.7rem" }}>🟢 {" "}</span>
                     Welcome to Our Platform
                   </span>
                 </div>
@@ -171,7 +171,7 @@ export default function LandingPage() {
       <section className=" py-16 mt-12 sm:py-20 bg-white dark:bg-black">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className="text-center sm:text-left mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
               Testimonials
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl sm:max-w-3xl">

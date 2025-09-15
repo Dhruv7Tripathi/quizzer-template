@@ -355,10 +355,6 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
       {plan.isPopular && (
         <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
           <div className="bg-green-600 py-1.5 px-4 rounded-full flex items-center gap-1.5">
-            {/* <LucideStar className="text-primary-foreground h-4 w-4 fill-current" /> */}
-            {/* <span className="text-primary-foreground text-sm font-semibold">
-              Most Popular
-            </span> */}
           </div>
         </div>
       )}
@@ -409,10 +405,10 @@ function PricingCard({ plan, index }: { plan: PricingPlan; index: number }) {
             href={plan.href}
             className={cn(
               buttonVariants({
-                variant: plan.isPopular ? "default" : "outline",
+                variant: plan.isPopular ? "outline" : "outline",
                 size: "lg",
               }),
-              "w-full",
+              "w-full text-neutral-950 dark:text-neutral-50",
             )}
           >
             {plan.buttonText}
