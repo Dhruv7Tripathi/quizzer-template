@@ -1,23 +1,17 @@
-"use client";
-import { useState } from "react";
-import Image from "next/image";
-import Footer from "./footer";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { faqItems } from "@/contants";
-import Link from "next/link";
-import { FeatureSection } from "./feature";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import CtaSection from "./cta-section";
-import { PricingSection } from "@/components/ui/pricing";
-import { Testimonial } from "./testimonial";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { GridBeam } from "../ui/beam";
+"use client"
+import Image from "next/image"
+import Footer from "./footer"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { faqItems } from "@/contants"
+import Link from "next/link"
+import { FeatureSection } from "./feature"
+import { ArrowRight, ChevronRight } from "lucide-react"
+import CtaSection from "./cta-section"
+import { PricingSection } from "@/components/ui/pricing"
+import { Testimonial } from "./testimonial"
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { GridBeam } from "../ui/beam"
 const Plans = [
   {
     name: "Starter",
@@ -67,32 +61,25 @@ const Plans = [
     buttonText: "Contact Sales",
     href: "#",
   },
-];
+]
 
 export default function LandingPage() {
   // const [isHovered, setIsHovered] = useState(false);
   return (
     //overflow-x-hidden
     <div className="min-h-screen  flex flex-col bg-white dark:bg-black text-white ">
-      <main className="w-full min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
+      <main className="w-full overflow-hidden min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
         <div className="max-w-9xl w-full mt-18 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Left Image */}
-
-          {/* Right Content */}
           <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start">
             <div className="w-full">
-              {/* <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-4 border border-white/10">
-          <span className="text-white text-sm">Welcome to Our Platform</span>
-          <ChevronRight className="h-4 w-4 text-green-400" />
-        </div> */}
               <Link
                 href="/#"
                 className="inline-flex mb-4 bg-white dark:bg-black backdrop-blur-sm group mx-auto w-fit items-center gap-2 sm:gap-4 rounded-full border border-border/50 p-1 pl-3 sm:pl-4 shadow-lg shadow-black/10 transition-all duration-300 dark:border-t-white/10 dark:shadow-zinc-950/50 hover:shadow-xl text-xs sm:text-sm"
               >
                 <div className="flex items-center gap-1 sm:gap-2">
                   {/* <Sparkles className="size-3 sm:size-4 text-primary" /> */}
-                  <span className="text-foreground font-medium">
-                    <span className="animate-pulse text-green-400" style={{ fontSize: "0.7rem" }}>🟢 {" "}</span>
+                  <span className="text-foreground flex items-center font-medium gap-2">
+                    <span className="size-2 mt-1 rounded-full bg-green-500 animate-pulse inline-block" />
                     Welcome to Our Platform
                   </span>
                 </div>
@@ -110,7 +97,9 @@ export default function LandingPage() {
                 </div>
               </Link>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-950 dark:text-neutral-50 mb-6">Gamify Your Knowledge</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-950 dark:text-neutral-50 mb-6">
+                Gamify Your Knowledge
+              </h1>
 
               <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 max-w-lg">
                 Engage your audience with interactive questions and real-time feedback. Start building your own quiz
@@ -145,39 +134,54 @@ export default function LandingPage() {
               </motion.div>
             </div>
           </GridBeam>
-          <div className="w-full h-full flex items-center justify-center  perspective-1000">
-            <div className="relative w-[700px] h-[600px]">
-              {/* Rotated image */}
+          {/* <div className="w-full mb-8 h-full flex items-center justify-center"> */}
+          <div className="mr-12 pl-2">
+            <motion.div
+              initial={{
+                opacity: 0,
+                filter: "blur(10px)",
+              }}
+              whileInView={{
+                opacity: 1,
+                filter: "blur(0px)",
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+                ease: "easeInOut",
+              }}
+              viewport={{ once: true }}
+              className="relative skew-x-[.10rad] "
+            >
               <Image
+                className="rounded-xl aspect-[18/12] shadow-lg mr-12 shadow-black"
                 src="/hero.png"
-                alt="Quiz illustration"
-                fill
-                className="rounded-xl shadow-2xl border border-white/10 rotate-y-6deg"
+                alt="hero section"
+                width={1000}
+                height={600} // Increased height from 400 to 600
                 priority
+                quality={100}
               />
-
-              {/* <div className="absolute bottom-0 left-0 w-full h-40 rounded-b-xl bg-gradient-to-t from-black/90 via-black/60 to-transparent z-10 pointer-events-none" /> */}
-            </div>
+            </motion.div>
           </div>
 
-
+          {/* </div> */}
+          <div className="absolute mt-8 bottom-0 left-0 h-[480px] w-full bg-gradient-to-t dark:from-black from-white via-transparent to-transparent z-20" />
         </div>
       </main>
 
-
-      <div className="ml-24 mr-24" >
+      <div className="ml-24 mr-24">
         <FeatureSection />
       </div>
-      <section className=" py-16 mt-12 sm:py-20 bg-white dark:bg-black">
+      <section className="py-16 mt-12 sm:py-20 bg-white dark:bg-black">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
-          <div className="text-center sm:text-left mb-12">
+          <div className="text-center mx-24 px-4 sm:text-left mb-12">
             <h1 className="text-3xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
               Testimonials
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl sm:max-w-3xl">
-              Discover how our platform has helped users achieve their goals efficiently.
-              Read real stories from customers who transformed their workflow with us.
-              Your success could be the next testimonial we feature!
+              Discover how our platform has helped users achieve their goals efficiently. Read real stories from
+              customers who transformed their workflow with us. Your success could be the next testimonial we feature!
             </p>
             <div className="mt-6">
               <button className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 transition">
@@ -186,14 +190,14 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Testimonials Carousel */}
-          <Testimonial />
+          <div className="mt-16 max-w-7xl ">
+            <Testimonial />
+          </div>
         </div>
       </section>
 
       <section className="w-full py-16 min-h-screen  sm:py-20 bg-white dark:bg-black">
         <div className="mt-12">
-
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl text-neutral-950 dark:text-neutral-50 sm:text-3xl font-bold md:text-4xl mb-4">
@@ -221,7 +225,6 @@ export default function LandingPage() {
         </div>
       </section>
       <div className="max-w-6xl mx-auto   ml-24 mr-24">
-
         <PricingSection
           plans={Plans}
           title="Pricing Plans"
@@ -229,11 +232,10 @@ export default function LandingPage() {
         />
       </div>
       <div className="max-w-9xl  ml-24 mr-24">
-
         <CtaSection />
       </div>
       <Footer />
       {/* <FeedbackButton /> */}
     </div>
-  );
+  )
 }

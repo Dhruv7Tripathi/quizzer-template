@@ -118,12 +118,10 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
 							</motion.div>
 						);
 					})}
-					<div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
 
 				</div>
 			</div>
-			<div className="flex justify-end gap-2 mt-4">
+			{/* <div className="flex justify-end gap-2 mt-4">
 				<button
 					className="relative z-40 h-10 w-10 rounded-full bg-[#4b3f33] flex items-center justify-center disabled:opacity-50 hover:bg-[#4b3f33]/80 transition-colors duration-200"
 					onClick={handleScrollLeft}
@@ -138,7 +136,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
 				>
 					<ArrowRight className="h-6 w-6 text-[#f2f0eb]" />
 				</button>
-			</div>
+			</div> */}
 		</div>
 	);
 };

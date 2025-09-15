@@ -1,5 +1,6 @@
 import { Carousel, TestimonialCard } from "@/components/ui/retro-testimonial";
 import { iTestimonial } from "@/components/ui/retro-testimonial";
+import { Marquee } from "@/components/ui/marquee"
 type TestimonialDetails = {
   [key: string]: iTestimonial & { id: string };
 };
@@ -70,17 +71,26 @@ const testimonialData = {
     },
   },
 };
-
+const Row = testimonialData.ids.slice(0, testimonialData.ids.length / 2);
 // Example 1: Basic Carousel with Testimonials
-const cards = testimonialData.ids.map((cardId: string, index: number) => {
+const cards = Row.map((cardId: string, index: number) => {
   const details = testimonialData.details as TestimonialDetails;
   return (
-    <TestimonialCard
-      key={cardId}
-      testimonial={details[cardId]}
-      index={index}
-      backgroundImage="https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?q=80&w=3129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    />
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {/* {firstRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))} */}
+        <TestimonialCard
+          key={cardId}
+          testimonial={details[cardId]}
+          index={index}
+        // backgroundImage="https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?q=80&w=3129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+      </Marquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+    </div>
   );
 });
 
