@@ -8,7 +8,7 @@ import { FeatureSection } from "./feature"
 import { ArrowRight, ChevronRight } from "lucide-react"
 import CtaSection from "./cta-section"
 import { PricingSection } from "@/components/ui/pricing"
-import { Testimonial } from "./testimonial"
+import { Cards } from "./testimonial"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { GridBeam } from "../ui/beam"
@@ -154,7 +154,7 @@ export default function LandingPage() {
               className="relative skew-x-[.10rad] "
             >
               <Image
-                className="rounded-xl aspect-[18/12] shadow-lg mr-12 shadow-black"
+                className="rounded-xl aspect-[20/16] shadow-lg mr-12 shadow-black"
                 src="/hero.png"
                 alt="hero section"
                 width={1000}
@@ -165,33 +165,35 @@ export default function LandingPage() {
             </motion.div>
           </div>
 
-          {/* </div> */}
           <div className="absolute mt-8 bottom-0 left-0 h-[480px] w-full bg-gradient-to-t dark:from-black from-white via-transparent to-transparent z-20" />
         </div>
       </main>
 
-      <div className="ml-24 mr-24">
-        <FeatureSection />
-      </div>
+      {/* <div className="ml-24 mr-24">
+        <Cards />
+      </div> */}
       <section className="py-16 mt-12 sm:py-20 bg-white dark:bg-black">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
-          <div className="text-center mx-24 px-4 sm:text-left mb-12">
+          <div className=" flex flex-row mx-24 px-4 sm:text-left mb-12">
             <h1 className="text-3xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
-              Testimonials
+              Trusted by Users Worldwide
             </h1>
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl sm:max-w-3xl">
-              Discover how our platform has helped users achieve their goals efficiently. Read real stories from
-              customers who transformed their workflow with us. Your success could be the next testimonial we feature!
-            </p>
-            <div className="mt-6">
-              <button className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 transition">
-                Read Our Customer Stories
-              </button>
+            <div className="ml-22 flex  flex-col">
+
+              <p className="text-base  sm:text-lg justify-end text-neutral-600 dark:text-neutral-300 max-w-xl ">
+                Discover how our platform has helped users achieve their goals efficiently. Read real stories from
+                customers who transformed their workflow with us. Your success could be the next testimonial we feature!
+              </p>
+              <div className="mt-6">
+                <button className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 transition">
+                  Read Our Customer Stories
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="mt-16 max-w-7xl ">
-            <Testimonial />
+            <Cards />
           </div>
         </div>
       </section>

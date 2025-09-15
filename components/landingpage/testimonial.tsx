@@ -1,111 +1,52 @@
-import { Carousel, TestimonialCard } from "@/components/ui/retro-testimonial";
-import { iTestimonial } from "@/components/ui/retro-testimonial";
-import { Marquee } from "@/components/ui/marquee"
-type TestimonialDetails = {
-  [key: string]: iTestimonial & { id: string };
-};
+import { Marquee } from "@/components/ui/marquee";
+import TestimonialCard from "@/components/ui/retro-testimonial";
 
-const testimonialData = {
-  ids: [
-    "e60aa346-f6da-11ed-b67e-0242ac120002",
-    "e60aa346-f6da-11ed-b67e-0242ac120003",
-    "e60aa346-f6da-11ed-b67e-0242ac120004",
-    "e60aa346-f6da-11ed-b67e-0242ac120005",
-    "e60aa346-f6da-11ed-b67e-0242ac120006",
-    "e60aa346-f6da-11ed-b67e-0242ac120007",
-  ],
-  details: {
-    "e60aa346-f6da-11ed-b67e-0242ac120002": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120002",
-      description:
-        "The component library has revolutionized our development workflow. The pre-built components are not only beautiful but also highly customizable. It's saved us countless hours of development time.",
-      profileImage:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-      name: "Sarah Chen",
-      designation: "Senior Frontend Developer",
-    },
-    "e60aa346-f6da-11ed-b67e-0242ac120003": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120003",
-      description:
-        "As a startup founder, I needed a quick way to build a professional-looking product. This component library was exactly what I needed. The documentation is clear, and the components are production-ready.",
-      profileImage:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-      name: "Michael Rodriguez",
-      designation: "Founder, TechStart",
-    },
-    "e60aa346-f6da-11ed-b67e-0242ac120004": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120004",
-      description:
-        "The attention to detail in these components is impressive. From accessibility features to responsive design, everything is well thought out. It's become an essential part of our tech stack.",
-      profileImage:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-      name: "David Kim",
-      designation: "UI/UX Lead",
-    },
-    "e60aa346-f6da-11ed-b67e-0242ac120005": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120005",
-      description:
-        "What sets this component library apart is its flexibility. We've been able to maintain consistency across our applications while still customizing components to match our brand identity perfectly.",
-      profileImage:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-      name: "Emily Thompson",
-      designation: "Product Designer",
-    },
-    "e60aa346-f6da-11ed-b67e-0242ac120006": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120006",
-      description:
-        "The performance optimization in these components is outstanding. We've seen significant improvements in our application's load times and overall user experience since implementing them.",
-      profileImage:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-      name: "James Wilson",
-      designation: "Performance Engineer",
-    },
-    "e60aa346-f6da-11ed-b67e-0242ac120007": {
-      id: "e60aa346-f6da-11ed-b67e-0242ac120007",
-      description:
-        "The community support and regular updates make this component library a reliable choice for our projects. It's clear that the team behind it is committed to maintaining high quality and adding new features.",
-      profileImage:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
-      name: "Sophia Martinez",
-      designation: "Full Stack Developer",
-    },
+const testimonials = [
+  {
+    name: "Amy Chase",
+    title: "PM",
+    company: "Mercury Finance",
+    quote:
+      "Thanks to Streamline, we're finding new leads that we never would have found with legal methods.",
+    imageUrl: "https://i.pinimg.com/736x/f6/61/ea/f661ea61616909838a9fbfeda0d2ea14.jpg",
   },
-};
-const Row = testimonialData.ids.slice(0, testimonialData.ids.length / 2);
-// Example 1: Basic Carousel with Testimonials
-const cards = Row.map((cardId: string, index: number) => {
-  const details = testimonialData.details as TestimonialDetails;
+  {
+    name: "Victoria Smith",
+    title: "Founder",
+    company: "TechWave",
+    quote: "Streamline makes managing teams feel effortless and joyful.",
+    imageUrl: "https://i.pinimg.com/736x/6c/c5/19/6cc519f013abcf2ad6168a126ee877db.jpg",
+  },
+  {
+    name: "Jonas Kotara",
+    title: "Lead Engineer",
+    company: "DevOrbit",
+    quote:
+      "I was able to replace 80% of my team with Streamline bots so I can spend more time on my body.",
+    imageUrl: "https://i.pinimg.com/736x/a9/67/27/a96727d343d319c458c757cef37a1379.jpg",
+  },
+  {
+    name: "Henry Vargas",
+    title: "CTO",
+    company: "Buildify",
+    quote:
+      "Founder Mode is hard enough without having a really nice project management app.",
+    imageUrl: "https://i.pinimg.com/736x/2a/7f/c6/2a7fc60c8cb7e8280da5c4e0fb72e6c0.jpg",
+  },
+];
+
+const Row = testimonials.slice(0, testimonials.length / 2);
+
+export function Cards() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative ml-24 mr-24 flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
-        {/* {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))} */}
-        <TestimonialCard
-          key={cardId}
-          testimonial={details[cardId]}
-          index={index}
-        // backgroundImage="https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?q=80&w=3129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
+        {Row.map((testimonial) => (
+          <TestimonialCard key={testimonial.name} {...testimonial} />
+        ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-black"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-black"></div>
     </div>
   );
-});
-
-const Testimonial = () => {
-  return (
-    <div className="min-h-screen">
-      {/* Example 1: Basic Carousel */}
-      <section className="py-12  bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-4">
-          <Carousel items={cards} />
-        </div>
-      </section>
-    </div>
-  );
-};
-
-
-export { Testimonial };
+}
