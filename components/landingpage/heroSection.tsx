@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Navbar from "./navbar";
+import Image from "next/image";
 import Footer from "./footer";
 import {
   Accordion,
@@ -15,6 +15,9 @@ import { ChevronRight } from "lucide-react";
 import CtaSection from "./cta-section";
 import { PricingSection } from "@/components/ui/pricing";
 import { Testimonial } from "./testimonial";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { GridBeam } from "../ui/beam";
 const Plans = [
   {
     name: "Starter",
@@ -67,54 +70,77 @@ const Plans = [
 ];
 
 export default function LandingPage() {
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   return (
     //overflow-x-hidden
-    <div className="min-h-screen  flex flex-col bg-black text-white ">
-      {/* <Navbar /> */}
-      {/* <div className=" px-4"> */}
-      <main className="w-full min-h-screen items-start max-w-4xl text-center py-16 sm:py-20 px-4 sm:px-6">
-        <div className="relative">
-          <div
-            className="absolute -z-10 inset-0 opacity-80 h-[600px] w-full 
-        bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] 
-        dark:bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)]
-        bg-[size:6rem_5rem] 
-        [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
-          />
-          <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-2 border border-white/10">
-            <span className="text-white text-sm">Welcome to Our Platform</span>
-            <ChevronRight className="h-4 w-4 text-green-400" />
-          </div>
-          {/* <SparklesSection /> */}
-          <div className="relative z-10 max-w-5xl mb-8 sm:mb-12">
+    <div className="min-h-screen  flex flex-col bg-white dark:bg-black text-white ">
+      <main className="w-full min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
+        <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-              <span>Transform your ideas into</span>
-              <br />
-              <span className="bg-gradient-to-r from-green-400 to-green-700 bg-clip-text text-transparent">
-                beautiful digital experiences
-              </span>
-            </h1>
-            <p className="text-sm sm:text-base text-neutral-300 max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-12">
-              Instantly generate quizzes powered by AI — smart, customizable, and shareable in seconds.
-            </p>
+          {/* Left Image */}
 
+          {/* Right Content */}
+          <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start" >
+
+            <div className="w-full">
+              <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-4 border border-white/10">
+                <span className="text-white text-sm">Welcome to Our Platform</span>
+                <ChevronRight className="h-4 w-4 text-green-400" />
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Gamify Your Knowledge
+              </h1>
+
+              <p className="text-sm sm:text-base text-neutral-300 max-w-2xl">
+                Engage your audience with interactive questions and real-time feedback.
+                Start building your own quiz experience effortlessly and watch learning come alive!
+              </p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                className="mt-10 flex flex-col sm:flex-row gap-4"
+              >
+                <motion.div transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                  <Button size="lg" className="text-lg py-5 px-8 sm:w-auto">
+                    <Link href="/#">Get Started</Link>
+                  </Button>
+                </motion.div>
+
+                <motion.div transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                  <Button
+                    size="lg"
+                    className="text-lg px-6 w-full sm:w-auto bg-background hover:bg-background dark:bg-background text-neutral-900 dark:text-neutral-100 group"
+                  >
+                    <Link href="/#" className="flex items-center">
+                      Browse Docs
+                      <motion.span
+                        whileHover={{ x: 4 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <ChevronRight className="ml-2 size-5 transition-transform group-hover:translate-x-3" />
+                      </motion.span>
+                    </Link>
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </div>
+          </GridBeam>
+          <div className="w-full h-full flex items-center justify-center">
+            <Image
+              src="/hero.png" // ✅ replace with your actual image path (e.g., public/images/hero-quiz.png)
+              alt="Quiz illustration"
+              width={600}
+              height={500}
+              className="rounded-xl aspect-[16/10] -rotate-y-6 shadow-lg object-cover"
+              priority
+            />
           </div>
-          <Link href="/quizzes">
-            <button
-              className={`w-full sm:w-auto text-sm sm:text-base bg-gradient-to-r from-green-400 to-green-700 text-white font-medium py-3 px-6 sm:px-8 rounded-full transition duration-300 ${isHovered ? "shadow-xl shadow-green-500/40 scale-105" : ""}`}
-            >
-              Get Started
-            </button>
-          </Link>
         </div>
-        <div
-          className="animate-fade-up relative mt-32 opacity-0 [perspective:2000px] 
-        after:absolute after:inset-0 after:z-50 
-        after:[background:linear-gradient(to_top,hsl(var(--background))_10%,transparent)]"
-        />
       </main>
+
       <div className="ml-24 mr-24" >
         <FeatureSection />
       </div>

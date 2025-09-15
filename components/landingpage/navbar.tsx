@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { navItems } from '@/contants';
+import { Themetoggle } from '../ui/themetoggle';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="z-50 bg-black w-full  shadow-lg shadow-neutral-600/5 backdrop-blur-lg px-4 lg:px-8">
+    <nav className="z-50 bg-white dark:bg-black w-full  shadow-lg shadow-neutral-600/5 backdrop-blur-lg px-4 lg:px-8">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -28,7 +29,7 @@ const Navbar = () => {
                 alt="Quizzer Logo"
                 className="rounded-xl group-hover:scale-110 transition-transform"
               />
-              <span className="text-xl font-bold text-white group-hover:text-white transition-colors">
+              <span className="text-xl font-bold text-neutral-900 dark:text-neutral-50 group-hover:text-black dark:group-hover:text-white transition-colors">
                 Quizzer
               </span>
             </Link>
@@ -46,12 +47,13 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center space-x-4">
+            <Themetoggle />
             <Link href={"/#"} className="text-white font-semibold rounded-3xl">
               Login
             </Link>
             <Link
               href={"/#"}
-              className="text-white font-semibold px-3 py-2 bg-green-500 hover:text-white transition-colors rounded-3xl"
+              className="text-white font-semibold px-3 py-1.5 bg-green-500 hover:text-white transition-colors rounded-lg"
             >
               Sign Up
             </Link>
