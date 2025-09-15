@@ -4,28 +4,18 @@ import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import type { SVGProps } from "react";
 
-type FrameworkAgnosticProps = {
-  cardTitle?: string;
-  // cardDescription?: string;
-};
-
-const FrameworkAgnostic = ({
-  // cardTitle = "Framework Agnostic",
-  // cardDescription = "Seamlessly integrate with any tech stack, whether it's Next.js,React, HTML, or anything else. Statsio works everywhere.",
-}: FrameworkAgnosticProps) => {
+const FrameworkAgnostic = () => {
   return (
     <div
       className={cn(
         "relative",
         "flex flex-col justify-between",
         "h-[22rem] space-y-4",
-        "rounded-md border border-neutral-800/50 bg-neutral-950",
+        "rounded-md border border-neutral-50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-neutral-950",
       )}
     >
       <FrameworkCard />
       <div className="px-4 pb-4">
-        {/* <div className="text-sm font-semibold text-white">{cardTitle}</div> */}
-        {/* <div className="mt-2 text-xs text-neutral-400">{cardDescription}</div> */}
       </div>
     </div>
   );

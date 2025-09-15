@@ -24,7 +24,7 @@ export default function CardStatus() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center bg-neutral-950">
+    <div className="w-full flex items-center justify-center bg-neutral-50 dark:bg-neutral-950">
       <AnimatedCardStatusList
         title="Fundamentals Demo"
         cards={CardsStatus}

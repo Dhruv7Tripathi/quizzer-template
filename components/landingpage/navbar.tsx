@@ -40,7 +40,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex items-center text-white hover:text-green-400 transition-colors group"
+                className="flex items-center text-neutral-900 dark:text-white hover:text-green-400 transition-colors group"
               >
                 <span className="group-hover:underline">{item.name}</span>
               </Link>
@@ -48,12 +48,12 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-4">
             <Themetoggle />
-            <Link href={"/#"} className="text-white font-semibold rounded-3xl">
+            <Link href={"/#"} className="text-neutral-900 dark:text-white font-semibold rounded-3xl">
               Login
             </Link>
             <Link
               href={"/#"}
-              className="text-white font-semibold px-3 py-1.5 bg-green-500 hover:text-white transition-colors rounded-lg"
+              className="text-neutral-900 dark:text-white font-semibold px-3 py-1.5 bg-green-500 hover:text-white transition-colors rounded-lg"
             >
               Sign Up
             </Link>

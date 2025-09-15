@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
@@ -144,10 +144,10 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
 };
 const TestimonialCard = ({
 	testimonial,
-	index,
+	// index,
 	layout = false,
-	onCardClose = () => { },
-	backgroundImage = "https://images.unsplash.com/photo-1686806372726-388d03ff49c8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+	// onCardClose = () => { },
+	// backgroundImage = "https://images.unsplash.com/photo-1686806372726-388d03ff49c8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 }: {
 	testimonial: iTestimonial;
 	index: number;
@@ -156,14 +156,9 @@ const TestimonialCard = ({
 	backgroundImage?: string;
 }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
-	const containerRef = useRef<HTMLDivElement>(null);
+	// const containerRef = useRef<HTMLDivElement>(null);
 
 	const handleExpand = () => setIsExpanded(true);
-	const handleCollapse = () => {
-		setIsExpanded(false);
-		onCardClose?.();
-	};
-
 	return (
 		<>
 			<AnimatePresence>
@@ -184,14 +179,14 @@ const TestimonialCard = ({
 			>
 				<div className="rounded-3xl bg-white h-[500px] md:h-[550px] w-80 md:w-96 overflow-hidden flex flex-col items-center justify-center relative z-10 shadow-md">
 					{/* Background Image */}
-					<div className="absolute opacity-30 inset-0">
+					{/* <div className="absolute opacity-30 inset-0">
 						<Image
 							src={backgroundImage}
 							alt="Background"
 							fill
 							className="object-cover w-full h-full"
 						/>
-					</div>
+					</div> */}
 
 					{/* Profile */}
 					<ProfileImage src={testimonial.profileImage} alt={testimonial.name} />

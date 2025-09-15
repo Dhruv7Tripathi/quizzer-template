@@ -11,7 +11,7 @@ import {
 import { faqItems } from "@/contants";
 import Link from "next/link";
 import { FeatureSection } from "./feature";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import CtaSection from "./cta-section";
 import { PricingSection } from "@/components/ui/pricing";
 import { Testimonial } from "./testimonial";
@@ -75,26 +75,46 @@ export default function LandingPage() {
     //overflow-x-hidden
     <div className="min-h-screen  flex flex-col bg-white dark:bg-black text-white ">
       <main className="w-full min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
-        <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
+        <div className="max-w-9xl w-full mt-18 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
 
           {/* Right Content */}
-          <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start" >
-
+          <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start">
             <div className="w-full">
-              <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-4 border border-white/10">
-                <span className="text-white text-sm">Welcome to Our Platform</span>
-                <ChevronRight className="h-4 w-4 text-green-400" />
-              </div>
+              {/* <div className="bg-black backdrop-blur-md rounded-full inline-flex items-center gap-1 px-4 py-2 mb-4 border border-white/10">
+          <span className="text-white text-sm">Welcome to Our Platform</span>
+          <ChevronRight className="h-4 w-4 text-green-400" />
+        </div> */}
+              <Link
+                href="/#"
+                className="inline-flex mb-4 bg-white dark:bg-black backdrop-blur-sm group mx-auto w-fit items-center gap-2 sm:gap-4 rounded-full border border-border/50 p-1 pl-3 sm:pl-4 shadow-lg shadow-black/10 transition-all duration-300 dark:border-t-white/10 dark:shadow-zinc-950/50 hover:shadow-xl text-xs sm:text-sm"
+              >
+                <div className="flex items-center gap-1 sm:gap-2">
+                  {/* <Sparkles className="size-3 sm:size-4 text-primary" /> */}
+                  <span className="text-foreground font-medium">
+                    <span className="animate-pulse text-green-400">🟢 </span>
+                    Welcome to Our Platform
+                  </span>
+                </div>
+                <span className="dark:border-background block h-3 sm:h-4 w-0.5 border-l bg-border/50 dark:bg-zinc-600"></span>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-                Gamify Your Knowledge
-              </h1>
+                <div className="bg-background/80 group-hover:bg-muted/80 size-5 sm:size-6 overflow-hidden rounded-full duration-500 backdrop-blur-sm">
+                  <div className="flex w-10 sm:w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                    <span className="flex size-5 sm:size-6">
+                      <ArrowRight className="m-auto size-2.5 sm:size-3 text-primary" />
+                    </span>
+                    <span className="flex size-5 sm:size-6">
+                      <ArrowRight className="m-auto size-2.5 sm:size-3 text-primary" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
 
-              <p className="text-sm sm:text-base text-neutral-300 max-w-2xl">
-                Engage your audience with interactive questions and real-time feedback.
-                Start building your own quiz experience effortlessly and watch learning come alive!
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-950 dark:text-neutral-50 mb-6">Gamify Your Knowledge</h1>
+
+              <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 max-w-lg">
+                Engage your audience with interactive questions and real-time feedback. Start building your own quiz
+                experience effortlessly and watch learning come alive!
               </p>
 
               <motion.div
@@ -116,11 +136,8 @@ export default function LandingPage() {
                   >
                     <Link href="/#" className="flex items-center">
                       Browse Docs
-                      <motion.span
-                        whileHover={{ x: 4 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      >
-                        <ChevronRight className="ml-2 size-5 transition-transform group-hover:translate-x-3" />
+                      <motion.span whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+                        <ChevronRight className="ml-2 mt-1 size-5 transition-transform group-hover:translate-x-3" />
                       </motion.span>
                     </Link>
                   </Button>
@@ -128,24 +145,31 @@ export default function LandingPage() {
               </motion.div>
             </div>
           </GridBeam>
-          <div className="w-full h-full flex items-center justify-center">
-            <Image
-              src="/hero.png" // ✅ replace with your actual image path (e.g., public/images/hero-quiz.png)
-              alt="Quiz illustration"
-              width={600}
-              height={500}
-              className="rounded-xl aspect-[16/10] -rotate-y-6 shadow-lg object-cover"
-              priority
-            />
+          <div className="w-full h-full flex items-center justify-center  perspective-1000">
+            <div className="relative w-[700px] h-[600px]">
+              {/* Rotated image */}
+              <Image
+                src="/hero.png"
+                alt="Quiz illustration"
+                fill
+                className="rounded-xl shadow-2xl border border-white/10 rotate-y-6deg"
+                priority
+              />
+
+              {/* <div className="absolute bottom-0 left-0 w-full h-40 rounded-b-xl bg-gradient-to-t from-black/90 via-black/60 to-transparent z-10 pointer-events-none" /> */}
+            </div>
           </div>
+
+
         </div>
       </main>
+
 
       <div className="ml-24 mr-24" >
         <FeatureSection />
       </div>
       <section className=" py-16 mt-12 sm:py-20 bg-white dark:bg-black">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12">
+        <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className="text-center sm:text-left mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Testimonials
@@ -167,12 +191,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="w-full py-16 min-h-screen  sm:py-20 bg-black">
+      <section className="w-full py-16 min-h-screen  sm:py-20 bg-white dark:bg-black">
         <div className="mt-12">
 
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-serif md:text-4xl font-bold mb-4">
+              <h2 className="text-2xl text-neutral-950 dark:text-neutral-50 sm:text-3xl font-bold md:text-4xl mb-4">
                 FAQ's
               </h2>
             </div>
@@ -184,10 +208,10 @@ export default function LandingPage() {
             >
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left dark:hover:text-green-700  sm:text-lg font-medium py-4 text-white">
+                  <AccordionTrigger className="text-left dark:hover:text-green-700  sm:text-lg font-medium py-4 text-neutral-950  dark:text-white">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-gray-200 pb-4">
+                  <AccordionContent className="text-sm sm:text-base text-neutral-800 dark:text-neutral-200 pb-4">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

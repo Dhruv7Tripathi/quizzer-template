@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-16 border-t border-neutral-900 text-white relative">
+    <footer className="bg-white dark:bg-black py-16 border-t border-neutral-100 dark:border-neutral-900 text-neutral-900 dark:text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           {/* Logo and About */}
@@ -19,7 +19,7 @@ const Footer = () => {
                 className="rounded-xl"
                 unoptimized
               />
-              <span className="text-xl font-extrabold text-white">Quizzer</span>
+              <span className="text-xl p-2 font-extrabold text-neutral-800 dark:text-white">Quizzer</span>
             </Link>
             <p className="text-sm mt-2">
               Building in public at
@@ -42,22 +42,22 @@ const Footer = () => {
                 <h3 className="font-semibold text-base mb-3">Features</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/" className="text-gray-300 hover:text-green-500">
+                    <Link href="/" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Dashboard
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Create Quiz
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Profile
                     </Link>
                   </li>
@@ -72,7 +72,7 @@ const Footer = () => {
                     <Link
                       href="https://www.linkedin.com"
                       target="_blank"
-                      className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                      className="flex items-center space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500"
                     >
                       <span>LinkedIn</span>
                     </Link>
@@ -81,7 +81,7 @@ const Footer = () => {
                     <Link
                       href="https://x.com"
                       target="_blank"
-                      className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                      className="flex items-center space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500"
                     >
                       <span>Twitter</span>
                     </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
                     <Link
                       href="https://github.com/Dhruv7Tripathi"
                       target="_blank"
-                      className="flex items-center space-x-2 text-gray-300 hover:text-green-500"
+                      className="flex items-center space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500"
                     >
                       <span>GitHub</span>
                     </Link>
@@ -103,17 +103,17 @@ const Footer = () => {
                 <h3 className="font-semibold text-base mb-3">Others</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Privacy Policy
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#" className="text-gray-300 hover:text-green-500">
+                    <Link href="/#" className="text-neutral-700 dark:text-gray-300 hover:text-green-500">
                       Terms & Conditions
                     </Link>
                   </li>
@@ -123,8 +123,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* ✅ Green Gradient Line */}
       <div
         className="absolute w-full h-px top-0 left-0 z-0"
         style={{
@@ -132,13 +130,6 @@ const Footer = () => {
             "radial-gradient(50% 50% at 50% 50%, rgba(34,197,94,0.4) 0%, rgba(0,0,0,0) 100%)",
         }}
       />
-
-      {/* Optional: Footer Bottom Section */}
-      {/* <div className="mt-20 border-t border-green-400 pt-6 text-center">
-        <p className="text-sm text-gray-300">
-          © {new Date().getFullYear()} Quizzer. All rights reserved.
-        </p>
-      </div> */}
     </footer>
   );
 };

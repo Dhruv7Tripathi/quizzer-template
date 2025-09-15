@@ -44,7 +44,7 @@ function Feature() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2  flex justify-between flex-col">
+            <div className="bg-neutral-50 dark:bg-neutral-950 rounded-md h-full lg:col-span-2  flex justify-between flex-col">
               {/* <AnimatedCardChart /> */}
               <AnimatedCard>
                 <CardVisual>
@@ -59,17 +59,17 @@ function Feature() {
               </AnimatedCard>
 
             </div>
-            <div className="bg-neutral-950 rounded-xl  flex justify-between flex-col">
+            <div className="bg-neutral-50 dark:bg-neutral-950 rounded-xl  flex justify-between flex-col">
               <CardStatus />
             </div>
 
-            <div className="bg-neutral-950 rounded-xl  flex justify-between flex-col">
+            <div className="bg-neutral-50 dark:bg-neutral-950 rounded-xl  flex justify-between flex-col">
               <AnimatedPin />
 
             </div>
-            <div className="bg-neutral-950 rounded-md h-full lg:col-span-2 aspect-square lg:aspect-auto flex justify-between flex-col">
+            <div className="bg-neutral-50 dark:bg-neutral-950 rounded-md h-full lg:col-span-2 aspect-square lg:aspect-auto flex justify-between flex-col">
               <FrameworkAgnostic
-                cardTitle="Framework Agnostic"
+              // cardTitle="Framework Agnostic"
               // cardDescription="Seamlessly integrate with any tech stack, whether it's Next.js,React, HTML, or anything else. Statsio works everywhere."
               />
             </div>
