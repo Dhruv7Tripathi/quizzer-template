@@ -4,7 +4,7 @@ import Footer from "./footer"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { faqItems } from "@/contants"
 import Link from "next/link"
-import { FeatureSection } from "./feature"
+// import { FeatureSection } from "./feature"
 import { ArrowRight, ChevronRight } from "lucide-react"
 import CtaSection from "./cta-section"
 import { PricingSection } from "@/components/ui/pricing"
@@ -12,69 +12,21 @@ import { Cards } from "./testimonial"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { GridBeam } from "../ui/beam"
-const Plans = [
-  {
-    name: "Starter",
-    price: "50",
-    yearlyPrice: "40",
-    period: "month",
-    features: [
-      "Up to 10 projects",
-      "Basic analytics",
-      "48-hour support response time",
-      "Limited API access",
-      "Community support",
-    ],
-    description: "Perfect for individuals and small projects.",
-    buttonText: "Start Free Trial",
-    href: "#",
-  },
-  {
-    name: "Professional",
-    price: "99",
-    yearlyPrice: "79",
-    period: "month",
-    features: [
-      "Unlimited projects",
-      "Advanced analytics",
-      "24-hour support response time",
-      "Full API access",
-      "Priority support & Team collaboration",
-    ],
-    description: "Ideal for growing teams and businesses.",
-    buttonText: "Get Started",
-    href: "#",
-    isPopular: true,
-  },
-  {
-    name: "Enterprise",
-    price: "299",
-    yearlyPrice: "239",
-    period: "month",
-    features: [
-      "Everything in Professional",
-      "Custom solutions & integrations",
-      "Dedicated account manager",
-      "SSO Authentication & Advanced security",
-    ],
-    description: "For large organizations with specific needs.",
-    buttonText: "Contact Sales",
-    href: "#",
-  },
-]
+import { Plans } from "@/contants"
+import { FeatureSection } from "./feature"
 
 export default function LandingPage() {
   // const [isHovered, setIsHovered] = useState(false);
   return (
     //overflow-x-hidden
     <div className="min-h-screen  flex flex-col bg-white dark:bg-black text-white ">
-      <main className="w-full overflow-hidden min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
+      <main className="w-full border-b border-neutral-100 dark:border-neutral-800 overflow-hidden min-h-screen py-16 sm:py-10 px-4 sm:px-6 ">
         <div className="max-w-9xl w-full mt-18 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start">
             <div className="w-full">
               <Link
                 href="/#"
-                className="inline-flex mb-4 bg-white dark:bg-black backdrop-blur-sm group mx-auto w-fit items-center gap-2 sm:gap-4 rounded-full border border-border/50 p-1 pl-3 sm:pl-4 shadow-lg shadow-black/10 transition-all duration-300 dark:border-t-white/10 dark:shadow-zinc-950/50 hover:shadow-xl text-xs sm:text-sm"
+                className="inline-flex mb-4 bg-white dark:bg-black backdrop-blur-sm group mx-auto w-fit items-center gap-2 sm:gap-4 rounded-full border border-neutral-200  dark:border-border/50 p-1 pl-3 sm:pl-4 shadow-lg shadow-black/10 transition-all duration-300 dark:border-t-white/10 dark:shadow-zinc-950/50 hover:shadow-xl text-xs sm:text-sm"
               >
                 <div className="flex items-center gap-1 sm:gap-2">
                   {/* <Sparkles className="size-3 sm:size-4 text-primary" /> */}
@@ -85,7 +37,7 @@ export default function LandingPage() {
                 </div>
                 <span className="dark:border-background block h-3 sm:h-4 w-0.5 border-l bg-border/50 dark:bg-zinc-600"></span>
 
-                <div className="bg-background/80 group-hover:bg-muted/80 size-5 sm:size-6 overflow-hidden rounded-full duration-500 backdrop-blur-sm">
+                <div className="bg-background/80 mt-1 group-hover:bg-muted/80 size-5 sm:size-6 overflow-hidden rounded-full duration-500 backdrop-blur-sm">
                   <div className="flex w-10 sm:w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                     <span className="flex size-5 sm:size-6">
                       <ArrowRight className="m-auto size-2.5 sm:size-3 text-primary" />
@@ -110,7 +62,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-                className="mt-10 flex flex-col sm:flex-row gap-4"
+                className="mt-10 flex flex-row gap-4"
               >
                 <motion.div transition={{ type: "spring", stiffness: 400, damping: 17 }}>
                   <Button size="lg" className="text-lg py-5 px-8 sm:w-auto">
@@ -118,15 +70,20 @@ export default function LandingPage() {
                   </Button>
                 </motion.div>
 
-                <motion.div transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                <motion.div
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
                   <Button
                     size="lg"
-                    className="text-lg px-6 w-full sm:w-auto bg-background hover:bg-background dark:bg-background text-neutral-900 dark:text-neutral-100 group"
+                    className="text-lg w-full sm:w-auto bg-background hover:bg-background dark:bg-background text-neutral-900 dark:text-neutral-100 group"
                   >
-                    <Link href="/#" className="flex items-center">
+                    <Link href="/docs/intro" className="flex items-center">
                       Browse Docs
-                      <motion.span whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-                        <ChevronRight className="ml-2 mt-1 size-5 transition-transform group-hover:translate-x-3" />
+                      <motion.span
+                        whileHover={{ x: 4 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <ChevronRight className="ml-2 size-5 transition-transform group-hover:translate-x-3" />
                       </motion.span>
                     </Link>
                   </Button>
@@ -154,28 +111,28 @@ export default function LandingPage() {
               className="relative skew-x-[.10rad] "
             >
               <Image
-                className="rounded-xl aspect-[20/16] shadow-lg mr-12 shadow-black"
+                className="rounded-xl aspect-[20/18] shadow-lg mr-12 shadow-black" // Changed aspect ratio to increase length
                 src="/hero.png"
                 alt="hero section"
                 width={1000}
-                height={600} // Increased height from 400 to 600
+                height={1200} // Increased height for a longer image
                 priority
                 quality={100}
               />
             </motion.div>
           </div>
 
-          <div className="absolute mt-8 bottom-0 left-0 h-[480px] w-full bg-gradient-to-t dark:from-black from-white via-transparent to-transparent z-20" />
         </div>
+        <div className="absolute mt-8 bottom-0 left-0 h-[480px] w-full bg-gradient-to-t dark:from-black from-white via-transparent to-transparent z-20" />
       </main>
 
-      {/* <div className="ml-24 mr-24">
-        <Cards />
-      </div> */}
-      <section className="py-16 mt-12 sm:py-20 bg-white dark:bg-black">
+      <div className="ml-24 mt-24 mr-24">
+        <FeatureSection />
+      </div>
+      <section className="py-16 mt-24 sm:py-20 bg-white dark:bg-black">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
           <div className=" flex flex-row mx-24 px-4 sm:text-left mb-12">
-            <h1 className="text-3xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl max-w-xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
               Trusted by Users Worldwide
             </h1>
             <div className="ml-22 flex  flex-col">

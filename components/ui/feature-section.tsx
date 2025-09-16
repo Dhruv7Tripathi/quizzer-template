@@ -40,7 +40,7 @@ function Feature() {
               <h2 className="mx-auto max-w-5xl text-balance bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-900/30 dark:from-neutral-100 dark:via-neutral-100 via-50% dark:to-neutral-100/30 bg-clip-text pb-3 pt-1 text-center text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-[4.2rem]">
                 Try Something New
               </h2>
-              <SparklesSection />
+              {/* <SparklesSection /> */}
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

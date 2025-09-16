@@ -197,7 +197,7 @@ export default function TestimonialCard({
 	imageUrl,
 }: TestimonialCardProps) {
 	return (
-		<div className="rounded-2xl overflow-hidden border border-black/80 shadow-sm w-full max-w-sm bg-white dark:bg-zinc-900 dark:border-white/10">
+		<div className="rounded-2xl overflow-hidden border border-white/80 shadow-sm w-full max-w-sm bg-white dark:bg-zinc-900 dark:border-white/10">
 			{/* Image */}
 			<div className="relative w-full h-64">
 				<Image

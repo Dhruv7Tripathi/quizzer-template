@@ -320,7 +320,7 @@ function PricingToggle() {
           </span> */}
         </button>
       </div>
-      <span className="ml-2 text-sm">Billed Anually</span>
+      <span className="ml-2 dark:text-neutral-100 text-neutral-800 text-sm">Billed Anually</span>
     </div>
   );
 }
