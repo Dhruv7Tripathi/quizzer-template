@@ -10,11 +10,10 @@ const Footer = () => {
         {/* Mobile-first grid layout */}
         <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-4">
 
-          {/* Logo and About - Full width on mobile, spans 1 column on desktop */}
           <div className="text-center sm:text-left lg:col-span-1">
             <Link href="/" className="inline-flex items-center space-x-2 mb-4 justify-center sm:justify-start">
               <Image
-                src="/ww.png"
+                src="/logo.png"
                 width={30}
                 height={30}
                 alt="Logo"
@@ -38,11 +37,9 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links Section - Better mobile layout */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:justify-end">
+          <div className="lg:col-span-3 px-34 ml-24 max-w-5xl mx-auto">
+            <div className="grid  grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:justify-end">
 
-              {/* Features */}
               <div className="text-center sm:text-left">
                 <h3 className="font-semibold text-base mb-4 text-neutral-900 dark:text-white">
                   Features

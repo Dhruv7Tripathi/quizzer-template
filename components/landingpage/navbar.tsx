@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { navItems } from '@/contants';
 import { Themetoggle } from '../ui/themetoggle';
+import { SiGithub } from "react-icons/si";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +23,7 @@ const Navbar = () => {
               className="flex items-center space-x-2 group"
             >
               <Image
-                src="/ww.png"
+                src="/logo.png"
                 width={35}
                 height={35}
                 priority={true}
@@ -47,6 +48,8 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center space-x-4">
+
+            <SiGithub size={20} className="text-neutral-900 dark:text-white" />
             <Themetoggle />
             <Link href={"/#"} className="text-neutral-900 dark:text-white font-semibold rounded-3xl">
               Login

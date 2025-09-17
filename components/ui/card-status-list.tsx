@@ -123,20 +123,18 @@ export function AnimatedCardStatusList({
             height="16"
             viewBox="0 0 16 16"
           >
-            {/* Create 8 dashes around the circle */}
+
             {Array.from({ length: 8 }).map((_, index) => {
               const angle = (index * 45) - 90; // Start from top, -90 to offset
               const radian = (angle * Math.PI) / 180;
               const radius = 6;
               const dashLength = 1.8;
 
-              // Calculate start and end points for each dash
               const startX = 8 + (radius - dashLength / 2) * Math.cos(radian);
               const startY = 8 + (radius - dashLength / 2) * Math.sin(radian);
               const endX = 8 + (radius + dashLength / 2) * Math.cos(radian);
               const endY = 8 + (radius + dashLength / 2) * Math.sin(radian);
 
-              // Use the activeDashIndex to determine which dash is white
               const isActive = index === activeDashIndex;
 
               return (
@@ -179,7 +177,6 @@ export function AnimatedCardStatusList({
     }
   };
 
-  // Sort cards: completed first, then others
   const sortedCards = [...cards].sort((a, b) => {
     if (a.status === "completed" && b.status !== "completed") return -1;
     if (a.status !== "completed" && b.status === "completed") return 1;
@@ -188,9 +185,7 @@ export function AnimatedCardStatusList({
 
   return (
     <div className={`w-full mx-auto ${className}`}>
-      {/* Container with border */}
       <div className="border border-border/30 rounded-xl p-6 bg-card">
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <motion.button
             onClick={handleBack}
@@ -213,7 +208,6 @@ export function AnimatedCardStatusList({
           </motion.button>
         </div>
 
-        {/* Cards */}
         <motion.div
           className="space-y-3"
           variants={{
