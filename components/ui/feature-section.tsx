@@ -1,7 +1,6 @@
-import { User } from "lucide-react";
 import CardStatus from "../landingpage/card-status";
-import { SparklesCore } from "./sparkles";
-import AnimatedCardChart from "../landingpage/animated-card";
+// import { SparklesCore } from "./sparkles";
+// import AnimatedCardChart from "../landingpage/animated-card";
 import { AnimatedPin } from "../landingpage/3d-pin";
 import FrameworkAgnostic from "./framework-agnostic";
 import {
@@ -14,23 +13,23 @@ import {
 import { Visual3 } from "@/components/ui/animated-card-chart"
 
 function Feature() {
-  const SparklesSection = () => (
-    <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-[2px] blur-sm w-3/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-px w-3/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-[5px] blur-sm w-1/4" />
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-px w-1/4" />
-      <SparklesCore
-        background="transparent"
-        minSize={0.4}
-        maxSize={1}
-        particleDensity={1200}
-        className="w-full h-full"
-        particleColor="#FFFFFF"
-      />
-      <div className="absolute inset-0 w-full h-full bg-white dark:bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-    </div>
-  );
+  // const SparklesSection = () => (
+  //   <div className="relative w-30 sm:w-[40rem] h-24 mx-auto">
+  //     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-[2px] blur-sm w-3/4" />
+  //     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-500 to-transparent h-px w-3/4" />
+  //     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-[5px] blur-sm w-1/4" />
+  //     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bg-gradient-to-r from-transparent via-green-300 to-transparent h-px w-1/4" />
+  //     <SparklesCore
+  //       background="transparent"
+  //       minSize={0.4}
+  //       maxSize={1}
+  //       particleDensity={1200}
+  //       className="w-full h-full"
+  //       particleColor="#FFFFFF"
+  //     />
+  //     <div className="absolute inset-0 w-full h-full bg-white dark:bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+  //   </div>
+  // );
   return (
     <div className="w-full ">
       <div className="container mx-auto">

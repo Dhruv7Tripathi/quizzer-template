@@ -131,7 +131,7 @@ export default function LandingPage() {
       </div>
       <section className="py-16 mt-24 sm:py-20 bg-white dark:bg-black">
         <div className="max-w-8xl mx-auto px-6 sm:px-12">
-          <div className=" flex flex-row mx-24 px-4 sm:text-left mb-12">
+          <div className=" flex flex-row mx-24 px-4 sm:text-left mb-24">
             <h1 className="text-3xl max-w-xl sm:text-4xl text-neutral-950 dark:text-neutral-50 md:text-5xl font-bold mb-4">
               Trusted by Users Worldwide
             </h1>
@@ -160,7 +160,7 @@ export default function LandingPage() {
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl text-neutral-950 dark:text-neutral-50 sm:text-3xl font-bold md:text-4xl mb-4">
-                FAQ's
+                Frequently Asked Questions
               </h2>
             </div>
 
@@ -194,7 +194,6 @@ export default function LandingPage() {
         <CtaSection />
       </div>
       <Footer />
-      {/* <FeedbackButton /> */}
     </div>
   )
 }

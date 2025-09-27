@@ -6,28 +6,39 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-black py-8 sm:py-12 lg:py-16 border-t border-neutral-100 dark:border-neutral-900 text-neutral-900 dark:text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Mobile-first grid layout */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1 relative z-10">
+        {/* Grid Layout */}
         <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-4">
-
-          <div className="text-center sm:text-left lg:col-span-1">
-            <Link href="/" className="inline-flex items-center space-x-2 mb-4 justify-center sm:justify-start">
+          {/* Left Section - Logo and Description */}
+          <div className="sm:text-left lg:col-span-1">
+            {/* Logo + Brand Name */}
+            <Link
+              href="/"
+              className="flex items-center justify-center sm:justify-start gap-2 mb-4"
+            >
               <Image
                 src="/logo.png"
                 width={30}
                 height={30}
                 alt="Logo"
-                className="rounded-xl"
+                className="rounded-lg"
                 unoptimized
               />
-              <span className="text-xl p-2 font-extrabold text-neutral-800 dark:text-white">
+              <span className="text-xl font-extrabold text-neutral-800 dark:text-white">
                 Quizzer
               </span>
             </Link>
+
+            <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 text-center sm:text-left">
+              Quizzer is your all-in-one platform to create, share, and take
+              quizzes with ease. Empowering learners and educators to engage,
+              test knowledge, and grow together.
+            </p>
+
             <p className="text-sm mt-2 text-center sm:text-left">
-              Building in public at
+              Building in public at{" "}
               <a
-                className="text-green-400 pl-1 font-medium hover:text-green-300 transition-colors"
+                className="text-green-400 font-medium hover:text-green-300 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://layrdui.dhruvtripathi.in"
@@ -37,10 +48,11 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-3 px-34 ml-24 max-w-5xl mx-auto">
-            <div className="grid  grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:justify-end">
-
-              <div className="text-center sm:text-left">
+          {/* Right Section - Navigation */}
+          <div className="lg:col-span-3 flex lg:justify-end">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 text-center sm:text-left">
+              {/* Features */}
+              <div>
                 <h3 className="font-semibold text-base mb-4 text-neutral-900 dark:text-white">
                   Features
                 </h3>
@@ -48,7 +60,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Home
                     </Link>
@@ -56,7 +68,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Dashboard
                     </Link>
@@ -64,7 +76,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Create Quiz
                     </Link>
@@ -72,7 +84,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Profile
                     </Link>
@@ -81,7 +93,7 @@ const Footer = () => {
               </div>
 
               {/* Social */}
-              <div className="text-center sm:text-left">
+              <div>
                 <h3 className="font-semibold text-base mb-4 text-neutral-900 dark:text-white">
                   Social
                 </h3>
@@ -91,7 +103,7 @@ const Footer = () => {
                       href="https://www.linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center sm:justify-start space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
+                      className="flex items-center justify-center sm:justify-start text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
                     >
                       <span>LinkedIn</span>
                     </Link>
@@ -101,7 +113,7 @@ const Footer = () => {
                       href="https://x.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center sm:justify-start space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
+                      className="flex items-center justify-center sm:justify-start text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
                     >
                       <span>Twitter</span>
                     </Link>
@@ -111,7 +123,7 @@ const Footer = () => {
                       href="https://github.com/Dhruv7Tripathi"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center sm:justify-start space-x-2 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
+                      className="flex items-center justify-center sm:justify-start text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors py-1"
                     >
                       <span>GitHub</span>
                     </Link>
@@ -120,7 +132,7 @@ const Footer = () => {
               </div>
 
               {/* Others */}
-              <div className="text-center sm:text-left">
+              <div>
                 <h3 className="font-semibold text-base mb-4 text-neutral-900 dark:text-white">
                   Others
                 </h3>
@@ -128,7 +140,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       About Us
                     </Link>
@@ -136,7 +148,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Privacy Policy
                     </Link>
@@ -144,7 +156,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#"
-                      className="text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors block py-1"
+                      className="block py-1 text-neutral-700 dark:text-gray-300 hover:text-green-500 transition-colors"
                     >
                       Terms & Conditions
                     </Link>
@@ -155,7 +167,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Optional: Add a bottom section for mobile */}
+        {/* Bottom Copyright */}
         <div className="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800 text-center sm:hidden">
           <p className="text-xs text-neutral-600 dark:text-neutral-400">
             © 2024 Quizzer. All rights reserved.

@@ -18,7 +18,7 @@ export function cn(...inputs: ClassValue[]) {
 
 // --- Card Components ---
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> { }
+type CardProps = React.HTMLAttributes<HTMLDivElement>;
 export function AnimatedCard({ className, ...props }: CardProps) {
   return (
     <div
@@ -44,7 +44,7 @@ export function CardBody({ className, ...props }: CardProps) {
   )
 }
 
-interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> { }
+type CardTitleProps = React.HTMLAttributes<HTMLHeadingElement>;
 
 export function CardTitle({ className, ...props }: CardTitleProps) {
   return (
@@ -55,7 +55,7 @@ export function CardTitle({ className, ...props }: CardTitleProps) {
   )
 }
 
-interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> { }
+type CardDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
 
 export function CardDescription({ className, ...props }: CardDescriptionProps) {
   return <p className={cn("text-sm text-neutral-500 dark:text-neutral-400", className)} {...props} />
