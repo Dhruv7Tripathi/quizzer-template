@@ -30,9 +30,7 @@ const Footer = () => {
             </Link>
 
             <p className="text-xs text-neutral-600 dark:text-neutral-300 mt-1 text-center sm:text-left">
-              Quizzer is your all-in-one platform to create, share, and take
-              quizzes with ease. Empowering learners and educators to engage,
-              test knowledge, and grow together.
+              Quizzer Template: a lightweight, accessible  starter for building quizzes with Next.js, TypeScript, Tailwind CSS and LayrdUI components.
             </p>
 
             <p className="text-sm mt-2 text-center sm:text-left">

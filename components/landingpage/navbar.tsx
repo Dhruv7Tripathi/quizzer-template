@@ -44,8 +44,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 w-full backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className=" z-50 bg-white/80 dark:bg-black/80 w-full backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16">
 
             {/* Logo Section */}
@@ -87,10 +87,11 @@ const Navbar = () => {
                 href="https://github.com/Dhruv7Tripathi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-neutral-900 dark:text-white hover:text-green-400 transition-colors"
+                className="p-2 flex space-x-2 text-neutral-900 dark:text-white hover:text-green-400 transition-colors"
                 aria-label="GitHub Profile"
               >
-                <SiGithub size={20} />
+                <SiGithub size={20} className='' />
+                <span className='flex'>27.5k</span>
               </Link>
               <Themetoggle />
               <Link
