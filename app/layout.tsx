@@ -15,8 +15,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Template - LayrdUI",
-  description: "Quizzer Template built with heart by LayrdUI",
+  title: "Quizzer Template | LayrdUI",
+  description:
+    "Quizzer Template: a lightweight, accessible, and responsive starter for building quizzes with Next.js, TypeScript, Tailwind CSS and LayrdUI components. Includes theme support, analytics, and modular pages for questions, results, and admin flows.",
+  keywords: [
+    "quiz",
+    "template",
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "layrdui",
+    "accessibility",
+  ],
+  authors: [{ name: "LayrdUI" }],
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  openGraph: {
+    title: "Quizzer Template — LayrdUI",
+    description:
+      "A starter kit for building quizzes with Next.js and LayrdUI — accessible, themable, and production-ready.",
+    url: "https://layrdui.example/quizzer-template",
+    siteName: "LayrdUI",
+    images: [
+      {
+        url: "https://layrdui.example/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Quizzer Template — LayrdUI",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
