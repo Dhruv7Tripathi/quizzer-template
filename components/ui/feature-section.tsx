@@ -1,4 +1,4 @@
-import CardStatus from "../landingpage/card-status";
+import CardStatus from "../card-status";
 import { AnimatedPin } from "../3d-pin";
 import FrameworkAgnostic from "./framework-agnostic";
 import {
